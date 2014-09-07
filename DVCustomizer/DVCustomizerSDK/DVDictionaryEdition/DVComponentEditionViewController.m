@@ -73,12 +73,10 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     
     if ([key isEqualToString:@"itemName"]) {
         //call string edition
-    } else if ([key isEqualToString:@"layer"]) {
-        //layer customizer
-    } else if ([key respondsToSelector:@selector(integerValue)]) {
-        //number picker
-    } else {
+    } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
         //color picker
+    } else {
+        //textfield editor
     }
 }
 
