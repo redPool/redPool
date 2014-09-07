@@ -65,7 +65,7 @@ static BOOL presentAtInit;
         } else if ([component isKindOfClass:[UIImageView class]]) {
             dict = [[self.skin objectForKey:@"UIImageView"] objectAtIndex:[component.dvCustomType integerValue]];
             if ([dict objectForKey:@"imageColor"]) {
-                [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[UIColor colorFromHexString:[dict objectForKey:@"imageColor"]]]];
+                [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[[UIColor alloc] colorFromHexString:[dict objectForKey:@"imageColor"]]]];
             }
         } else if ([NSStringFromClass([self class]) hasPrefix:@"UIButton"]) {
             dict = [[self.skin objectForKey:@"UIButton"] objectAtIndex:[component.dvCustomType integerValue]];
@@ -89,9 +89,9 @@ static BOOL presentAtInit;
             && ![key isEqualToString:@"imageColor"]) {
             if ([[dict objectForKey:key] isKindOfClass:[NSString class]]) {
                 if ([key rangeOfString:@"layer"].location != NSNotFound) {
-                    [component setValue:(id)[UIColor colorFromHexString:[dict objectForKey:key]].CGColor forKeyPath:key];
+                    [component setValue:(id)[[UIColor alloc] colorFromHexString:[dict objectForKey:key]].CGColor forKeyPath:key];
                 } else {
-                    [component setValue:[UIColor colorFromHexString:[dict objectForKey:key]] forKeyPath:key];
+                    [component setValue:[[UIColor alloc] colorFromHexString:[dict objectForKey:key]] forKeyPath:key];
                 }
             } else if ([[dict objectForKey:key] respondsToSelector:@selector(intValue)]) {
                 [component setValue:@([[dict objectForKey:key] floatValue]) forKeyPath:key];
