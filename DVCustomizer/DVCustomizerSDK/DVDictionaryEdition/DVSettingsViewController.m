@@ -58,7 +58,6 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"DVCustomizerSettings";
-    [self.tableView setHidden:YES];
     self.textView.text = [NSString stringWithFormat:@"%@", self.dictionary];
 }
 
