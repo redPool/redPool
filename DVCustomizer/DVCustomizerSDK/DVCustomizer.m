@@ -75,6 +75,18 @@ static BOOL presentAtInit;
             dict = [[self.skin objectForKey:@"UINavigationBar"] objectAtIndex:[component.dvCustomType integerValue]];
         } else if ([component isKindOfClass:[UITabBar class]]) {
             dict = [[self.skin objectForKey:@"UITabBar"] objectAtIndex:[component.dvCustomType integerValue]];
+        } else if ([component isKindOfClass:[UITextView class]]) {
+            dict = [[self.skin objectForKey:@"UITextView"] objectAtIndex:[component.dvCustomType integerValue]];
+        } else if ([component isKindOfClass:[UISwitch class]]) {
+            dict = [[self.skin objectForKey:@"UISwitch"] objectAtIndex:[component.dvCustomType integerValue]];
+        } else if ([component isKindOfClass:[UISegmentedControl class]]) {
+            dict = [[self.skin objectForKey:@"UISegmentedControl"] objectAtIndex:[component.dvCustomType integerValue]];
+        } else if ([component isKindOfClass:[UISlider class]]) {
+            dict = [[self.skin objectForKey:@"UISlider"] objectAtIndex:[component.dvCustomType integerValue]];
+        } else if ([component isKindOfClass:[UIStepper class]]) {
+            dict = [[self.skin objectForKey:@"UIStepper"] objectAtIndex:[component.dvCustomType integerValue]];
+        } else if ([component isKindOfClass:[UIProgressView class]]) {
+            dict = [[self.skin objectForKey:@"UIProgressView"] objectAtIndex:[component.dvCustomType integerValue]];
         } else if ([component isKindOfClass:[UIView class]]) {
             dict = [[self.skin objectForKey:@"UIView"] objectAtIndex:[component.dvCustomType integerValue]];
         }
