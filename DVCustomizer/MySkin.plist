@@ -1,87 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-        <key>UIView</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UIView 1</string>
-                <key>backgroundColor</key>
-                <string>#6886E8</string>
-            </dict>
-        </array>
-        <key>UITextField</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UITextfield 1</string>
-                <key>backgroundColor</key>
-                <string>#FFFFFF(0.0)</string>
-                <key>textColor</key>
-                <string>#EBC5D6</string>
-            </dict>
-        </array>
-        <key>UIImageView</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UIImageView 1</string>
-                <key>imageColor</key>
-                <string>#FF0000</string>
-                <key>backgroundColor</key>
-                <string>#4F73E8</string>
-                <key>layer.cornerRadius</key>
-                <integer>35</integer>
-                <key>layer.borderWidth</key>
-                <integer>5</integer>
-                <key>layer.borderColor</key>
-                <string>#FFB300</string>
-            </dict>
-        </array>
-        <key>UIButton</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UIButton 1</string>
-                <key>backgroundColor</key>
-                <string>#14C81A:#3DC3CC</string>
-                <key>tintColor</key>
-                <string>#E87CB9:#E87CB9</string>
-            </dict>
-        </array>
-        <key>UILabel</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UILabel 1</string>
-                <key>textColor</key>
-                <string>#0000FF</string>
-            </dict>
-        </array>
-        <key>UITabBar</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UITabBar 1</string>
-                <key>backgroundColor</key>
-                <string>#EBC5D6</string>
-                <key>tintColor</key>
-                <string>#FFFFFF</string>
-                <key>barTintColor</key>
-                <string>#EBC5D6</string>
-            </dict>
-        </array>
-        <key>UINavigationBar</key>
-        <array>
-            <dict>
-                <key>itemName</key>
-                <string>UINavigationBar 1</string>
-                <key>backgroundColor</key>
-                <string>#EBC5D6</string>
-                <key>barTintColor</key>
-                <string>#EBC5D6</string>
-            </dict>
-        </array>
-    </dict>
+<dict>
+	<key>UIView</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UIView 1</string>
+			<key>backgroundColor</key>
+			<string>#6886E8</string>
+		</dict>
+		<dict>
+			<key>itemName</key>
+			<string>UIView 2</string>
+			<key>backgroundColor</key>
+			<string>#EBC5D6</string>
+		</dict>
+	</array>
+	<key>UITextField</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UITextfield 1</string>
+			<key>backgroundColor</key>
+			<string>#FFFFFF(0.0)</string>
+			<key>textColor</key>
+			<string>#EBC5D6</string>
+		</dict>
+	</array>
+	<key>UIImageView</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UIImageView 1</string>
+			<key>imageColor</key>
+			<string>#FF0000</string>
+			<key>backgroundColor</key>
+			<string>#4F73E8</string>
+			<key>layer.cornerRadius</key>
+			<integer>35</integer>
+			<key>layer.borderWidth</key>
+			<integer>5</integer>
+			<key>layer.borderColor</key>
+			<string>#FFB300</string>
+		</dict>
+	</array>
+	<key>UIButton</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UIButton 1</string>
+			<key>backgroundColor</key>
+			<string>#14C81A:#3DC3CC</string>
+			<key>tintColor</key>
+			<string>#E87CB9:#E87CB9</string>
+		</dict>
+	</array>
+	<key>UILabel</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UILabel 1</string>
+			<key>textColor</key>
+			<string>#0000FF</string>
+		</dict>
+	</array>
+	<key>UITabBar</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UITabBar 1</string>
+			<key>backgroundColor</key>
+			<string>#EBC5D6</string>
+			<key>tintColor</key>
+			<string>#FFFFFF</string>
+			<key>barTintColor</key>
+			<string>#EBC5D6</string>
+		</dict>
+	</array>
+	<key>UINavigationBar</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UINavigationBar 1</string>
+			<key>backgroundColor</key>
+			<string>#EBC5D6</string>
+			<key>barTintColor</key>
+			<string>#EBC5D6</string>
+		</dict>
+	</array>
+</dict>
 </plist>
