@@ -38,7 +38,6 @@
         ((DVSettingsViewController *)settings).delegate = self;
         settings.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didPressedDoneButton)];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settings];
-        [nav.navigationBar setTintColor:[UIColor whiteColor]];
         [[[[[UIApplication sharedApplication] windows] lastObject] rootViewController] presentViewController:nav animated:YES completion:nil];
     }
 }
