@@ -30,7 +30,6 @@
 		FA827E3419BCD3760031CC84 /* DVComponentEditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA827E2919BCD3760031CC84 /* DVComponentEditionViewController.xib */; };
 		FA827E3519BCD3760031CC84 /* DVSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E2B19BCD3760031CC84 /* DVSettingsViewController.m */; };
 		FA827E3619BCD3760031CC84 /* DVSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA827E2C19BCD3760031CC84 /* DVSettingsViewController.xib */; };
-		FA827E3719BCD3760031CC84 /* SkinExample.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA827E2D19BCD3760031CC84 /* SkinExample.plist */; };
 		FA827E3B19BCE35C0031CC84 /* MySkin.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA827E3A19BCE35C0031CC84 /* MySkin.plist */; };
 		FAC6DCC419BD088500790A7E /* DVColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCC219BD088500790A7E /* DVColorPickerController.m */; };
 		FAC6DCC519BD088500790A7E /* DVColorPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */; };
@@ -84,7 +83,6 @@
 		FA827E2A19BCD3760031CC84 /* DVSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSettingsViewController.h; sourceTree = "<group>"; };
 		FA827E2B19BCD3760031CC84 /* DVSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSettingsViewController.m; sourceTree = "<group>"; };
 		FA827E2C19BCD3760031CC84 /* DVSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVSettingsViewController.xib; sourceTree = "<group>"; };
-		FA827E2D19BCD3760031CC84 /* SkinExample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SkinExample.plist; sourceTree = "<group>"; };
 		FA827E3A19BCE35C0031CC84 /* MySkin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySkin.plist; sourceTree = "<group>"; };
 		FAC6DCC119BD088500790A7E /* DVColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVColorPickerController.h; sourceTree = "<group>"; };
 		FAC6DCC219BD088500790A7E /* DVColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVColorPickerController.m; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 				FA827E2519BCD3760031CC84 /* DVCustomizer.m */,
 				FA827E1B19BCD3760031CC84 /* DVCategories */,
 				FA827E2619BCD3760031CC84 /* DVDictionaryEdition */,
-				FA827E2D19BCD3760031CC84 /* SkinExample.plist */,
 			);
 			path = DVCustomizerSDK;
 			sourceTree = "<group>";
@@ -336,7 +333,6 @@
 				FAC6DCD019BDEFCE00790A7E /* DVNumberPickerController.xib in Resources */,
 				FA827DED19BCD3540031CC84 /* InfoPlist.strings in Resources */,
 				FA827E3419BCD3760031CC84 /* DVComponentEditionViewController.xib in Resources */,
-				FA827E3719BCD3760031CC84 /* SkinExample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
