@@ -10,8 +10,4 @@
 
 @interface DVViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (strong, nonatomic) IBOutlet UIView *containerView;
-
 @end
