@@ -54,7 +54,7 @@
             break;
     }
     
-    self.textField.text = self.originalText;
+    self.textField.text = [NSString stringWithFormat:@"%@", self.originalText];
     
     UIToolbar *inputAccessoryView = [[UIToolbar alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(inputAccessoryView.frame.size.width - 64.0f, 0.0f, 64.0f, 44.0f)];
@@ -72,9 +72,9 @@
 
 - (void)done {
     if (self.delegate
-        && [self.delegate respondsToSelector:@selector(didPressedReturnButtonWithAnswer:)]) {
+        && [self.delegate respondsToSelector:@selector(didFinishedEditingValue:withKey:)]) {
 #warning validate input
-        [self.delegate didPressedReturnButtonWithAnswer:self.textField.text];
+        [self.delegate didFinishedEditingValue:self.textField.text withKey:self.key];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

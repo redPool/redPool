@@ -17,7 +17,7 @@ NS_ENUM(NSInteger, DVTextFieldType) {
 
 @protocol DVNumberPickerController <NSObject>
 
-- (void)didPressedReturnButtonWithAnswer:(NSString *)string;
+- (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key;
 
 @end
 
@@ -28,5 +28,6 @@ NS_ENUM(NSInteger, DVTextFieldType) {
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic, assign) NSInteger textFieldType;
 @property (nonatomic, strong) NSString *originalText;
+@property (nonatomic, strong) NSString *key;
 
 @end
