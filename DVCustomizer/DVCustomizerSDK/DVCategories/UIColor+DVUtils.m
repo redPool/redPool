@@ -12,7 +12,7 @@
 
 @implementation UIColor (DVUtils)
 
-- (UIColor *)colorFromHexString:(NSString *)color {
++ (UIColor *)colorFromHexString:(NSString *)color {
     if (!color
         || [color isEqualToString:@""]) {
         return [UIColor clearColor];
@@ -54,64 +54,62 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:saturation];
 }
 
-- (NSString *)hexStringFromColor {
-    NSAssert (self.canProvideRGBComponents, @"Must be a RGB color to use hexStringFromColor");
++ (NSString *)hexStringFromColor:(UIColor *)color {
+    if (!color) {
+        return nil;
+    }
     
-    CGFloat r, g, b;
-    r = self.red;
-    g = self.green;
-    b = self.blue;
+    if (color == [UIColor whiteColor]) {
+        // Special case, as white doesn't fall into the RGB color space
+        return @"ffffff";
+    }
     
-    // Fix range if needed
-    if (r < 0.0f) r = 0.0f;
-    if (g < 0.0f) g = 0.0f;
-    if (b < 0.0f) b = 0.0f;
+    CGFloat red;
+    CGFloat blue;
+    CGFloat green;
+    CGFloat alpha;
     
-    if (r > 1.0f) r = 1.0f;
-    if (g > 1.0f) g = 1.0f;
-    if (b > 1.0f) b = 1.0f;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
     
-    // Convert to hex string between 0x00 and 0xFF
-    return [NSString stringWithFormat:@"%02X%02X%02X",
-            (int)(r * 255), (int)(g * 255), (int)(b * 255)];
+    int redDec = (int)(red * 255);
+    int greenDec = (int)(green * 255);
+    int blueDec = (int)(blue * 255);
+    
+    NSString *returnString = [NSString stringWithFormat:@"#%02X%02X%02X(%02f)", (unsigned int)redDec, (unsigned int)greenDec, (unsigned int)blueDec, alpha];
+    
+    return returnString;
 }
 
-- (CGColorSpaceModel) colorSpaceModel
-{
+- (CGColorSpaceModel) colorSpaceModel {
 	return CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
 }
 
-- (BOOL) canProvideRGBComponents
-{
+- (BOOL) canProvideRGBComponents {
 	return (([self colorSpaceModel] == kCGColorSpaceModelRGB) ||
 			([self colorSpaceModel] == kCGColorSpaceModelMonochrome));
 }
 
-- (CGFloat) red
-{
+- (CGFloat) red {
 	NSAssert (self.canProvideRGBComponents, @"Must be a RGB color to use -red, -green, -blue");
 	const CGFloat *c = CGColorGetComponents(self.CGColor);
 	return c[0];
 }
 
-- (CGFloat) green
-{
+- (CGFloat) green {
 	NSAssert (self.canProvideRGBComponents, @"Must be a RGB color to use -red, -green, -blue");
 	const CGFloat *c = CGColorGetComponents(self.CGColor);
 	if ([self colorSpaceModel] == kCGColorSpaceModelMonochrome) return c[0];
 	return c[1];
 }
 
-- (CGFloat) blue
-{
+- (CGFloat) blue {
 	NSAssert (self.canProvideRGBComponents, @"Must be a RGB color to use -red, -green, -blue");
 	const CGFloat *c = CGColorGetComponents(self.CGColor);
 	if ([self colorSpaceModel] == kCGColorSpaceModelMonochrome) return c[0];
 	return c[2];
 }
 
-- (CGFloat) alpha
-{
+- (CGFloat) alpha {
 	const CGFloat *c = CGColorGetComponents(self.CGColor);
 	return c[CGColorGetNumberOfComponents(self.CGColor)-1];
 }

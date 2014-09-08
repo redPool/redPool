@@ -10,7 +10,11 @@
 
 @interface UIColor (DVUtils)
 
-- (UIColor *)colorFromHexString:(NSString *)color;
-- (NSString *)hexStringFromColor:(UIColor *)color;
++ (UIColor *)colorFromHexString:(NSString *)color;
++ (NSString *)hexStringFromColor:(UIColor *)color;
+- (CGFloat) red;
+- (CGFloat) green;
+- (CGFloat) blue;
+- (CGFloat) alpha;
 
 @end
