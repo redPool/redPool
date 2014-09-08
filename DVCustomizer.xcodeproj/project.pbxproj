@@ -221,15 +221,15 @@
 		FA827E2619BCD3760031CC84 /* DVDictionaryEdition */ = {
 			isa = PBXGroup;
 			children = (
+				FAC6DCC119BD088500790A7E /* DVColorPickerController.h */,
+				FAC6DCC219BD088500790A7E /* DVColorPickerController.m */,
+				FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */,
 				FA827E2719BCD3760031CC84 /* DVComponentEditionViewController.h */,
 				FA827E2819BCD3760031CC84 /* DVComponentEditionViewController.m */,
 				FA827E2919BCD3760031CC84 /* DVComponentEditionViewController.xib */,
 				FA827E2A19BCD3760031CC84 /* DVSettingsViewController.h */,
 				FA827E2B19BCD3760031CC84 /* DVSettingsViewController.m */,
 				FA827E2C19BCD3760031CC84 /* DVSettingsViewController.xib */,
-				FAC6DCC119BD088500790A7E /* DVColorPickerController.h */,
-				FAC6DCC219BD088500790A7E /* DVColorPickerController.m */,
-				FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */,
 			);
 			path = DVDictionaryEdition;
 			sourceTree = "<group>";
