@@ -7,6 +7,7 @@
 //
 
 #import "DVComponentEditionViewController.h"
+#import "DVColorPickerController.h"
 
 static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 
@@ -74,7 +75,9 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     if ([key isEqualToString:@"itemName"]) {
         //call string edition
     } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
-        //color picker
+        DVColorPickerController *colorPickerController = [DVColorPickerController new];
+        colorPickerController.hexColor = [self.currentComponent objectForKey:key];
+        [self.navigationController pushViewController:colorPickerController animated:YES];
     } else {
         //textfield editor
     }
