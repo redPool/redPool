@@ -21,7 +21,6 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *keys;
 @property (nonatomic, strong) NSDictionary *currentComponent;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -58,7 +57,6 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"DVCustomizerSettings";
-    self.textView.text = [NSString stringWithFormat:@"%@", self.dictionary];
 }
 
 - (void)didReceiveMemoryWarning {
