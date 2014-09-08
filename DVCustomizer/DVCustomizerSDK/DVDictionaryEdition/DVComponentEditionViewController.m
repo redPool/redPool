@@ -11,7 +11,7 @@
 
 static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 
-@interface DVComponentEditionViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface DVComponentEditionViewController () <UITableViewDataSource, UITableViewDelegate, DVColorPickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *keys;
@@ -77,11 +77,20 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
         DVColorPickerController *colorPickerController = [DVColorPickerController new];
         colorPickerController.hexColor = [self.currentComponent objectForKey:key];
+        colorPickerController.key = key;
+        colorPickerController.delegate = self;
         [self.navigationController pushViewController:colorPickerController animated:YES];
     } else {
         //textfield editor
     }
 }
 
+#pragma mark - Color picker Delegate
+
+- (void)didFinishedEditingColor:(NSString *)hexNewColor withKey:(NSString *)key {
+    NSMutableDictionary *dict = [self.currentComponent mutableCopy];
+    [dict setObject:hexNewColor forKey:key];
+    self.currentComponent = dict;
+}
 
 @end
