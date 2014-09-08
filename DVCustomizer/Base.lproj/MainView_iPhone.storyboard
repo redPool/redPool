@@ -8,7 +8,7 @@
         <scene sceneID="4sE-V4-GTP">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="m6i-Xm-4tF" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Jju-Uw-Olq">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -66,6 +66,9 @@
                                 <state key="normal" title="UIButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-Rs-Xeq">
                                 <rect key="frame" x="20" y="147" width="175" height="29"/>
@@ -74,6 +77,9 @@
                                     <segment title="UISegmented"/>
                                     <segment title="Control"/>
                                 </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UITextfield" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4TA-Fe-zlK">
                                 <rect key="frame" x="203" y="146" width="97" height="30"/>
@@ -87,18 +93,30 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="La6-BR-m7u">
                                 <rect key="frame" x="18" y="200" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Klr-Le-Ed2">
                                 <rect key="frame" x="251" y="200" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </switch>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-09-XPc">
                                 <rect key="frame" x="20" y="275" width="150" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </progressView>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tIP-XZ-xeZ">
                                 <rect key="frame" x="206" y="261" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </stepper>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="rqt-rO-gvp">
                                 <rect key="frame" x="20" y="306" width="70" height="70"/>
@@ -113,13 +131,16 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhE-0q-108">
-                                <rect key="frame" x="20" y="391" width="280" height="25"/>
+                                <rect key="frame" x="20" y="391" width="150" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UIView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYy-Ov-KCI">
-                                        <rect key="frame" x="119" y="2" width="53" height="21"/>
+                                        <rect key="frame" x="49" y="2" width="53" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,14 +152,40 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="dvCustomType" value="0"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvQ-Pb-OWU">
+                                <rect key="frame" x="186" y="376" width="114" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Edit Dictionary">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="DVCustomizer" id="9mm-mt-iMD"/>
                     <connections>
                         <outlet property="containerView" destination="kh9-bI-dsS" id="vqd-mM-0BT"/>
+                        <outlet property="editDictionaryButton" destination="cvQ-Pb-OWU" id="jeb-sy-hkl"/>
                         <outlet property="textField" destination="4TA-Fe-zlK" id="Rdt-ZL-m7T"/>
                         <outlet property="textView" destination="jqH-d0-kJi" id="pe1-jG-qVj"/>
+                        <outletCollection property="componentsArray" destination="jqH-d0-kJi" id="erH-X7-Guz"/>
+                        <outletCollection property="componentsArray" destination="5MJ-VP-NE5" id="bYT-SN-Tmy"/>
+                        <outletCollection property="componentsArray" destination="eBF-Tl-6ix" id="0y2-oZ-odI"/>
+                        <outletCollection property="componentsArray" destination="WD2-Rs-Xeq" id="oZo-HX-ymZ"/>
+                        <outletCollection property="componentsArray" destination="4TA-Fe-zlK" id="X0z-jh-6TJ"/>
+                        <outletCollection property="componentsArray" destination="La6-BR-m7u" id="O9h-eV-AH1"/>
+                        <outletCollection property="componentsArray" destination="Klr-Le-Ed2" id="R1C-2x-RkJ"/>
+                        <outletCollection property="componentsArray" destination="DUR-09-XPc" id="oPP-B2-d8A"/>
+                        <outletCollection property="componentsArray" destination="tIP-XZ-xeZ" id="KPv-TW-zg4"/>
+                        <outletCollection property="componentsArray" destination="HhE-0q-108" id="zB3-ij-0mX"/>
+                        <outletCollection property="componentsArray" destination="rqt-rO-gvp" id="epT-6U-iND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA23F1AF19BDF77500BB90B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA23F1AE19BDF77500BB90B2 /* Images.xcassets */; };
 		FA827DE319BCD3540031CC84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE219BCD3540031CC84 /* Foundation.framework */; };
 		FA827DE519BCD3540031CC84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE419BCD3540031CC84 /* CoreGraphics.framework */; };
 		FA827DE719BCD3540031CC84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE619BCD3540031CC84 /* UIKit.framework */; };
@@ -16,7 +17,6 @@
 		FA827DF619BCD3540031CC84 /* MainView_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA827DF419BCD3540031CC84 /* MainView_iPhone.storyboard */; };
 		FA827DF919BCD3540031CC84 /* MainView_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA827DF719BCD3540031CC84 /* MainView_iPad.storyboard */; };
 		FA827DFC19BCD3540031CC84 /* DVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827DFB19BCD3540031CC84 /* DVViewController.m */; };
-		FA827DFE19BCD3540031CC84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA827DFD19BCD3540031CC84 /* Images.xcassets */; };
 		FA827E0519BCD3540031CC84 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827E0419BCD3540031CC84 /* XCTest.framework */; };
 		FA827E0619BCD3540031CC84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE219BCD3540031CC84 /* Foundation.framework */; };
 		FA827E0719BCD3540031CC84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE619BCD3540031CC84 /* UIKit.framework */; };
@@ -35,6 +35,8 @@
 		FAC6DCC419BD088500790A7E /* DVColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCC219BD088500790A7E /* DVColorPickerController.m */; };
 		FAC6DCC519BD088500790A7E /* DVColorPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */; };
 		FAC6DCCB19BD254000790A7E /* UIColor+DVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCCA19BD254000790A7E /* UIColor+DVUtils.m */; };
+		FAC6DCCF19BDEFCE00790A7E /* DVNumberPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCCD19BDEFCE00790A7E /* DVNumberPickerController.m */; };
+		FAC6DCD019BDEFCE00790A7E /* DVNumberPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC6DCCE19BDEFCE00790A7E /* DVNumberPickerController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA23F1AE19BDF77500BB90B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA827DDF19BCD3540031CC84 /* DVCustomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVCustomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA827DE219BCD3540031CC84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA827DE419BCD3540031CC84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +65,6 @@
 		FA827DF819BCD3540031CC84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainView_iPad.storyboard; sourceTree = "<group>"; };
 		FA827DFA19BCD3540031CC84 /* DVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVViewController.h; sourceTree = "<group>"; };
 		FA827DFB19BCD3540031CC84 /* DVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVViewController.m; sourceTree = "<group>"; };
-		FA827DFD19BCD3540031CC84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA827E0319BCD3540031CC84 /* DVCustomizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVCustomizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA827E0419BCD3540031CC84 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA827E0C19BCD3540031CC84 /* DVCustomizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DVCustomizerTests-Info.plist"; sourceTree = "<group>"; };
@@ -89,6 +91,9 @@
 		FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVColorPickerController.xib; sourceTree = "<group>"; };
 		FAC6DCC919BD254000790A7E /* UIColor+DVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DVUtils.h"; sourceTree = "<group>"; };
 		FAC6DCCA19BD254000790A7E /* UIColor+DVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DVUtils.m"; sourceTree = "<group>"; };
+		FAC6DCCC19BDEFCE00790A7E /* DVNumberPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVNumberPickerController.h; sourceTree = "<group>"; };
+		FAC6DCCD19BDEFCE00790A7E /* DVNumberPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVNumberPickerController.m; sourceTree = "<group>"; };
+		FAC6DCCE19BDEFCE00790A7E /* DVNumberPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVNumberPickerController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +161,6 @@
 				FA827DFB19BCD3540031CC84 /* DVViewController.m */,
 				FA827E3A19BCE35C0031CC84 /* MySkin.plist */,
 				FA827E1A19BCD3760031CC84 /* DVCustomizerSDK */,
-				FA827DFD19BCD3540031CC84 /* Images.xcassets */,
 				FA827DE919BCD3540031CC84 /* Supporting Files */,
 			);
 			path = DVCustomizer;
@@ -165,6 +169,7 @@
 		FA827DE919BCD3540031CC84 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA23F1AE19BDF77500BB90B2 /* Images.xcassets */,
 				FA827DEA19BCD3540031CC84 /* DVCustomizer-Info.plist */,
 				FA827DEB19BCD3540031CC84 /* InfoPlist.strings */,
 				FA827DEE19BCD3540031CC84 /* main.m */,
@@ -221,9 +226,7 @@
 		FA827E2619BCD3760031CC84 /* DVDictionaryEdition */ = {
 			isa = PBXGroup;
 			children = (
-				FAC6DCC119BD088500790A7E /* DVColorPickerController.h */,
-				FAC6DCC219BD088500790A7E /* DVColorPickerController.m */,
-				FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */,
+				FAC6DCD119BDF03600790A7E /* Pickers */,
 				FA827E2719BCD3760031CC84 /* DVComponentEditionViewController.h */,
 				FA827E2819BCD3760031CC84 /* DVComponentEditionViewController.m */,
 				FA827E2919BCD3760031CC84 /* DVComponentEditionViewController.xib */,
@@ -232,6 +235,19 @@
 				FA827E2C19BCD3760031CC84 /* DVSettingsViewController.xib */,
 			);
 			path = DVDictionaryEdition;
+			sourceTree = "<group>";
+		};
+		FAC6DCD119BDF03600790A7E /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				FAC6DCCC19BDEFCE00790A7E /* DVNumberPickerController.h */,
+				FAC6DCCD19BDEFCE00790A7E /* DVNumberPickerController.m */,
+				FAC6DCCE19BDEFCE00790A7E /* DVNumberPickerController.xib */,
+				FAC6DCC119BD088500790A7E /* DVColorPickerController.h */,
+				FAC6DCC219BD088500790A7E /* DVColorPickerController.m */,
+				FAC6DCC319BD088500790A7E /* DVColorPickerController.xib */,
+			);
+			name = Pickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,11 +328,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA827DF919BCD3540031CC84 /* MainView_iPad.storyboard in Resources */,
+				FA23F1AF19BDF77500BB90B2 /* Images.xcassets in Resources */,
 				FA827E3619BCD3760031CC84 /* DVSettingsViewController.xib in Resources */,
-				FA827DFE19BCD3540031CC84 /* Images.xcassets in Resources */,
 				FA827DF619BCD3540031CC84 /* MainView_iPhone.storyboard in Resources */,
 				FA827E3B19BCE35C0031CC84 /* MySkin.plist in Resources */,
 				FAC6DCC519BD088500790A7E /* DVColorPickerController.xib in Resources */,
+				FAC6DCD019BDEFCE00790A7E /* DVNumberPickerController.xib in Resources */,
 				FA827DED19BCD3540031CC84 /* InfoPlist.strings in Resources */,
 				FA827E3419BCD3760031CC84 /* DVComponentEditionViewController.xib in Resources */,
 				FA827E3719BCD3760031CC84 /* SkinExample.plist in Resources */,
@@ -344,6 +361,7 @@
 				FA827E3319BCD3760031CC84 /* DVComponentEditionViewController.m in Sources */,
 				FA827E3019BCD3760031CC84 /* UIImage+DVUtils.m in Sources */,
 				FAC6DCC419BD088500790A7E /* DVColorPickerController.m in Sources */,
+				FAC6DCCF19BDEFCE00790A7E /* DVNumberPickerController.m in Sources */,
 				FA827DFC19BCD3540031CC84 /* DVViewController.m in Sources */,
 				FA827DEF19BCD3540031CC84 /* main.m in Sources */,
 				FA827E3119BCD3760031CC84 /* UIView+DVView.m in Sources */,
