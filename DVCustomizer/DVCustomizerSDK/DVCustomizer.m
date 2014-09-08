@@ -87,7 +87,9 @@ static BOOL presentAtInit;
     for (NSString *key in [dict allKeys]) {
         if (![key isEqualToString:@"itemName"]
             && ![key isEqualToString:@"imageColor"]) {
-            if ([[dict objectForKey:key] isKindOfClass:[NSString class]]) {
+            
+            if ([[dict objectForKey:key] isKindOfClass:[NSString class]]
+                && [[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
                 if ([key rangeOfString:@"layer"].location != NSNotFound) {
                     [component setValue:(id)[UIColor colorFromHexString:[dict objectForKey:key]].CGColor forKeyPath:key];
                 } else {
