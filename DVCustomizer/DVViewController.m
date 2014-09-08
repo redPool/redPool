@@ -42,7 +42,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)]];
-    [self.editDictionaryButton addTarget:self action:@selector(showSettings) forControlEvents:UIControlEventTouchUpInside];
     [self showSettings];
 }
 
@@ -62,7 +61,7 @@
     ((DVSettingsViewController *)settings).delegate = self;
     settings.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didPressedDoneButton)];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settings];
-    [[[[[UIApplication sharedApplication] windows] lastObject] rootViewController] presentViewController:nav animated:YES completion:nil];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 
 }
 
@@ -96,9 +95,12 @@
     [self.navigationController pushViewController:picker animated:YES];
 }
 
-- (void)didPressedReturnButtonWithAnswer:(NSString *)string {
+- (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key {
     self.currentEditedView.dvCustomType = string;
     [self.currentEditedView setNeedsDisplay];
+}
+- (IBAction)didPressedEditDictionaryButton:(id)sender {
+    [self showSettings];
 }
 
 @end
