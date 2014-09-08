@@ -89,5 +89,18 @@
 			<string>#EBC5D6</string>
 		</dict>
 	</array>
+	<key>UISwitch</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UISwitch 1</string>
+			<key>onTintColor</key>
+			<string>#B684B8</string>
+			<key>tintColor</key>
+			<string>#763878</string>
+			<key>thumbTintColor</key>
+			<string>#E9C0EB</string>
+		</dict>
+	</array>
 </dict>
 </plist>
