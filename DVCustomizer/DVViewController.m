@@ -27,19 +27,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)]];
-    
-    
-    if(!self.alreadyDisplayedDVCustomizer) {
-        self.alreadyDisplayedDVCustomizer = YES;
-        
-        UIViewController *settings = [DVSettingsViewController settingsViewController];
-        if(!settings)
-            return;
-        ((DVSettingsViewController *)settings).delegate = self;
-        settings.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didPressedDoneButton)];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settings];
-        [[[[[UIApplication sharedApplication] windows] lastObject] rootViewController] presentViewController:nav animated:YES completion:nil];
-    }
+    [self.navigationController.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showSettings)]];
+    [self showSettings];
 }
 
 - (void)didPressedDoneButton {
@@ -49,6 +38,17 @@
 - (void)hideKeyboard {
     [self.textField resignFirstResponder];
     [self.textView resignFirstResponder];
+}
+
+- (void)showSettings {
+    UIViewController *settings = [DVSettingsViewController settingsViewController];
+    if(!settings)
+        return;
+    ((DVSettingsViewController *)settings).delegate = self;
+    settings.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didPressedDoneButton)];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settings];
+    [[[[[UIApplication sharedApplication] windows] lastObject] rootViewController] presentViewController:nav animated:YES completion:nil];
+
 }
 
 @end
