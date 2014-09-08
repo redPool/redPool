@@ -8,10 +8,11 @@
 
 #import "DVComponentEditionViewController.h"
 #import "DVColorPickerController.h"
+#import "DVNumberPickerController.h"
 
 static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 
-@interface DVComponentEditionViewController () <UITableViewDataSource, UITableViewDelegate, DVColorPickerControllerDelegate>
+@interface DVComponentEditionViewController () <UITableViewDataSource, UITableViewDelegate, DVColorPickerControllerDelegate, DVNumberPickerController>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *keys;
@@ -82,8 +83,14 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
         colorPickerController.key = key;
         colorPickerController.delegate = self;
         [self.navigationController pushViewController:colorPickerController animated:YES];
-    } else {
-        //textfield editor
+    } else if ([[key lowercaseString] rangeOfString:@"width"].location != NSNotFound
+               || [[key lowercaseString] rangeOfString:@"radius"].location != NSNotFound) {
+        DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
+        numberPickerController.originalText = [self.currentComponent objectForKey:key];
+        numberPickerController.key = key;
+        numberPickerController.delegate = self;
+        numberPickerController.textFieldType = DVTextFieldTypeFloat;
+        [self.navigationController pushViewController:numberPickerController animated:YES];
     }
 }
 
@@ -100,6 +107,14 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 - (void)didFinishedEditingColor:(NSString *)hexNewColor withKey:(NSString *)key {
     NSMutableDictionary *dict = [self.currentComponent mutableCopy];
     [dict setObject:hexNewColor forKey:key];
+    self.currentComponent = dict;
+}
+
+#pragma makr - Numper picker delegate
+
+- (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key {
+    NSMutableDictionary *dict = [self.currentComponent mutableCopy];
+    [dict setObject:string forKey:key];
     self.currentComponent = dict;
 }
 
