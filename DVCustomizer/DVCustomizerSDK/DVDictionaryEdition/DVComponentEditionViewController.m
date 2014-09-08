@@ -31,6 +31,8 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didFinishedEditingComponent)];
+    self.navigationItem.leftBarButtonItem = doneButton;
     self.keys = [self.currentComponent allKeys];
 }
 
@@ -82,6 +84,14 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
         [self.navigationController pushViewController:colorPickerController animated:YES];
     } else {
         //textfield editor
+    }
+}
+
+- (void)didFinishedEditingComponent {
+    if (self.delegate
+        && [self.delegate respondsToSelector:@selector(didFinishedEditingComponent:withIdentifier:)]) {
+        [self.delegate didFinishedEditingComponent:self.currentComponent withIdentifier:self.componentIdentifier];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
