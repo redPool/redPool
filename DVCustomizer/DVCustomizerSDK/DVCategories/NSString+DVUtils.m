@@ -23,4 +23,30 @@
     return result;
 }
 
+- (NSString *)getStringForPhone {
+    NSString *result = self;
+    NSArray *components = [self componentsSeparatedByString:@":"];
+    
+    if ([components count] > 1) {
+        result = [components objectAtIndex:0];
+    } else {
+        result = self;
+    }
+    
+    return result;
+}
+
+- (NSString *)getStringForPad {
+    NSString *result = self;
+    NSArray *components = [self componentsSeparatedByString:@":"];
+    
+    if ([components count] > 1) {
+        result = [components objectAtIndex:1];
+    } else {
+        result = self;
+    }
+    
+    return result;
+}
+
 @end

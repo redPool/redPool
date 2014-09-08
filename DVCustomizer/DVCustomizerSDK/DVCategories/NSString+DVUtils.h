@@ -11,5 +11,7 @@
 @interface NSString (DVUtils)
 
 - (NSString *)getProperStringBasedOnDevice;
+- (NSString *)getStringForPhone;
+- (NSString *)getStringForPad;
 
 @end
