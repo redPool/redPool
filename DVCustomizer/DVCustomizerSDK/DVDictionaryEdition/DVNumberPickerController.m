@@ -50,6 +50,10 @@
             [self.textField setKeyboardType:UIKeyboardTypeDefault];
             break;
             
+        case DVTextFieldTypeText:
+            [self.textField setKeyboardType:UIKeyboardTypeDefault];
+            break;
+            
         default:
             break;
     }

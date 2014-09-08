@@ -11,7 +11,8 @@
 NS_ENUM(NSInteger, DVTextFieldType) {
     DVTextFieldTypeInteger = 0,
     DVTextFieldTypeFloat,
-    DVTextFieldTypeColor
+    DVTextFieldTypeColor,
+    DVTextFieldTypeText
 };
 
 

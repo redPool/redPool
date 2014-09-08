@@ -76,7 +76,12 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     NSString *key = [self.keys objectAtIndex:indexPath.row];
     
     if ([key isEqualToString:@"itemName"]) {
-        //call string edition
+        DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
+        numberPickerController.originalText = [self.currentComponent objectForKey:key];
+        numberPickerController.key = key;
+        numberPickerController.delegate = self;
+        numberPickerController.textFieldType = DVTextFieldTypeText;
+        [self.navigationController pushViewController:numberPickerController animated:YES];
     } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
         DVColorPickerController *colorPickerController = [DVColorPickerController new];
         colorPickerController.hexColor = [self.currentComponent objectForKey:key];
