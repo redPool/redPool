@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DVColorPickerControllerDelegate <NSObject>
+
+- (void)didFinishedEditingColor:(NSString *)hexNewColor withKey:(NSString *)key;
+
+@end
+
 @interface DVColorPickerController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet UISlider *redSlider;
-@property (weak, nonatomic) IBOutlet UISlider *greenSlider;
-@property (weak, nonatomic) IBOutlet UISlider *blueSlider;
-@property (weak, nonatomic) IBOutlet UISlider *alphaSlider;
-@property (weak, nonatomic) IBOutlet UITextField *colorTextField;
-@property (weak, nonatomic) IBOutlet UIView *colorSampleView;
+@property (nonatomic, assign) id <DVColorPickerControllerDelegate>delegate;
 @property (nonatomic, strong) NSString *hexColor;
+@property (nonatomic, strong) NSString *key;
 
 @end

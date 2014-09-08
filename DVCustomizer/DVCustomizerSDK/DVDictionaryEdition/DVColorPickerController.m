@@ -12,6 +12,14 @@
 
 @interface DVColorPickerController () <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UISlider *redSlider;
+@property (weak, nonatomic) IBOutlet UISlider *greenSlider;
+@property (weak, nonatomic) IBOutlet UISlider *blueSlider;
+@property (weak, nonatomic) IBOutlet UISlider *alphaSlider;
+@property (weak, nonatomic) IBOutlet UITextField *colorTextField;
+@property (weak, nonatomic) IBOutlet UIView *colorSampleView;
+
 @property (nonatomic, strong) NSString *hexColorPhone;
 @property (nonatomic, strong) NSString *hexColorPad;
 @property (nonatomic, strong) UIColor *currentColor;
@@ -32,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)]];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didFinishedEditingColor)];
+    self.navigationItem.rightBarButtonItem = doneButton;
     [self configureColorInitialization];
     [self reloadColor];
 }
@@ -97,6 +107,14 @@
 
 - (void)hideKeyboard {
     [self.colorTextField resignFirstResponder];
+}
+
+- (void)didFinishedEditingColor {
+    if (self.delegate
+        && [self.delegate respondsToSelector:@selector(didFinishedEditingColor:withKey:)]) {
+        [self.delegate didFinishedEditingColor:[NSString stringWithFormat:@"%@:%@", self.hexColorPhone, self.hexColorPad] withKey:self.key];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end
