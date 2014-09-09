@@ -93,7 +93,7 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
         cell.textLabel.text = [NSString stringWithFormat:@"Add %@ Component", [self.keys objectAtIndex:indexPath.section]];
     } else {
         NSDictionary *item = [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
-        cell.textLabel.text = [item objectForKey:@"itemName"];
+        cell.textLabel.text = [item objectForKey:kItemName];
     }
     
     return cell;
@@ -145,7 +145,7 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
 
 - (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key {
     NSMutableDictionary *temp = [self.dictionary mutableCopy];
-    NSMutableDictionary *dict = [@{@"itemName":string} mutableCopy];
+    NSMutableDictionary *dict = [@{kItemName:string} mutableCopy];
     NSMutableArray *arrayOfComponents = [[temp objectForKey:key] mutableCopy];
     [temp removeObjectForKey:key];
     [arrayOfComponents addObject:dict];

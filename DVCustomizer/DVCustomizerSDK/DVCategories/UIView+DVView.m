@@ -55,7 +55,7 @@ void dv_layoutSubviews_Imp(id self, SEL _cmd) {
     
     if ([DVSettingsViewController shouldShowAtInit]) {
 		// We need to get a hold of the notification observer to avoid leaking memory.
-        [[NSNotificationCenter defaultCenter] addObserverForName:kDVCustomizationDictionaryChangedNotification
+        [[NSNotificationCenter defaultCenter] addObserverForName:kCustomizationReloadNotification
 														  object:nil
 														   queue:[NSOperationQueue mainQueue]
 													  usingBlock:^(NSNotification *note) {

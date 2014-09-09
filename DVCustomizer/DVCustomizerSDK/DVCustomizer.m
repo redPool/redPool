@@ -59,36 +59,13 @@ static BOOL presentAtInit;
     NSDictionary *dict = [NSDictionary new];
     
     if (component.dvCustomType) {
-        if ([component isKindOfClass:[UITextField class]]) {
-            NSLog(@"Object DVCustomType: %@", component.dvCustomType);
-            dict = [[self.skin objectForKey:@"UITextField"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UIImageView class]]) {
-            dict = [[self.skin objectForKey:@"UIImageView"] objectAtIndex:[component.dvCustomType integerValue]];
-            if ([dict objectForKey:@"imageColor"]) {
-                [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[UIColor colorFromHexString:[dict objectForKey:@"imageColor"]]]];
+        NSLog(@"Object DVCustomType: %@", component.dvCustomType);
+        dict = [[self.skin objectForKey:NSStringFromClass([component class])] objectAtIndex:[component.dvCustomType integerValue]];
+        
+        if ([component isKindOfClass:[UIImageView class]]) {
+            if ([dict objectForKey:kImageColor]) {
+                [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[UIColor colorFromHexString:[dict objectForKey:kImageColor]]]];
             }
-        } else if ([NSStringFromClass([self class]) hasPrefix:@"UIButton"]) {
-            dict = [[self.skin objectForKey:@"UIButton"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UILabel class]]) {
-            dict = [[self.skin objectForKey:@"UILabel"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UINavigationBar class]]) {
-            dict = [[self.skin objectForKey:@"UINavigationBar"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UITabBar class]]) {
-            dict = [[self.skin objectForKey:@"UITabBar"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UITextView class]]) {
-            dict = [[self.skin objectForKey:@"UITextView"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UISwitch class]]) {
-            dict = [[self.skin objectForKey:@"UISwitch"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UISegmentedControl class]]) {
-            dict = [[self.skin objectForKey:@"UISegmentedControl"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UISlider class]]) {
-            dict = [[self.skin objectForKey:@"UISlider"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UIStepper class]]) {
-            dict = [[self.skin objectForKey:@"UIStepper"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UIProgressView class]]) {
-            dict = [[self.skin objectForKey:@"UIProgressView"] objectAtIndex:[component.dvCustomType integerValue]];
-        } else if ([component isKindOfClass:[UIView class]]) {
-            dict = [[self.skin objectForKey:@"UIView"] objectAtIndex:[component.dvCustomType integerValue]];
         }
         
         [self customizeComponent:component withDict:dict];
@@ -97,12 +74,12 @@ static BOOL presentAtInit;
 
 - (void)customizeComponent:(UIView *)component withDict:(NSDictionary *)dict {
     for (NSString *key in [dict allKeys]) {
-        if (![key isEqualToString:@"itemName"]
-            && ![key isEqualToString:@"imageColor"]) {
+        if (![key isEqualToString:kItemName]
+            && ![key isEqualToString:kImageColor]) {
             
             if ([[dict objectForKey:key] isKindOfClass:[NSString class]]
-                && [[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
-                if ([key rangeOfString:@"layer"].location != NSNotFound) {
+                && [[key lowercaseString] rangeOfString:kColor].location != NSNotFound) {
+                if ([key rangeOfString:kLayer].location != NSNotFound) {
                     [component setValue:(id)[UIColor colorFromHexString:[dict objectForKey:key]].CGColor forKeyPath:key];
                 } else {
                     [component setValue:[UIColor colorFromHexString:[dict objectForKey:key]] forKeyPath:key];
@@ -123,7 +100,7 @@ static BOOL presentAtInit;
 }
 
 - (void)reloadCustomization {
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"customizationDictionaryChangedNotification" object:self]];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kCustomizationReloadNotification object:self]];
 }
 
 #pragma mark Utils

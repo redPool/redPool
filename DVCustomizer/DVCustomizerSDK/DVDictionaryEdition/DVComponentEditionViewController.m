@@ -87,21 +87,21 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     } else {
         NSString *key = [self.keys objectAtIndex:indexPath.row];
         
-        if ([key isEqualToString:@"itemName"]) {
+        if ([key isEqualToString:kItemName]) {
             DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
             numberPickerController.originalText = [self.currentComponent objectForKey:key];
             numberPickerController.key = key;
             numberPickerController.delegate = self;
             numberPickerController.textFieldType = DVTextFieldTypeText;
             [self.navigationController pushViewController:numberPickerController animated:YES];
-        } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
+        } else if ([[key lowercaseString] rangeOfString:kColor].location != NSNotFound) {
             DVColorPickerController *colorPickerController = [DVColorPickerController new];
             colorPickerController.hexColor = [self.currentComponent objectForKey:key];
             colorPickerController.key = key;
             colorPickerController.delegate = self;
             [self.navigationController pushViewController:colorPickerController animated:YES];
-        } else if ([[key lowercaseString] rangeOfString:@"width"].location != NSNotFound
-                   || [[key lowercaseString] rangeOfString:@"radius"].location != NSNotFound) {
+        } else if ([[key lowercaseString] rangeOfString:kWidth].location != NSNotFound
+                   || [[key lowercaseString] rangeOfString:kRadius].location != NSNotFound) {
             DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
             numberPickerController.originalText = [self.currentComponent objectForKey:key];
             numberPickerController.key = key;
