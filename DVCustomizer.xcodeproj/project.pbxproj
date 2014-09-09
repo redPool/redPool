@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		11DA888719BE830100BD66A4 /* DVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVConstants.h; sourceTree = "<group>"; };
 		FA23F1AE19BDF77500BB90B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA23F1B019BF2F2300BB90B2 /* DVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVConstants.h; sourceTree = "<group>"; };
 		FA827DDF19BCD3540031CC84 /* DVCustomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVCustomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA827DE219BCD3540031CC84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA827DE419BCD3540031CC84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,6 +174,7 @@
 				FA827DEB19BCD3540031CC84 /* InfoPlist.strings */,
 				FA827DEE19BCD3540031CC84 /* main.m */,
 				FA827DF019BCD3540031CC84 /* DVCustomizer-Prefix.pch */,
+				FA23F1B019BF2F2300BB90B2 /* DVConstants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
