@@ -19,7 +19,6 @@
 
 @property (nonatomic, strong) NSMutableArray *gesturesArray;
 
-@property (nonatomic, assign) BOOL alreadyDisplayedDVCustomizer;
 @property (nonatomic, assign) BOOL isEditingComponentsTypes;
 
 @property (nonatomic, strong) UIView *currentEditedView;
@@ -43,10 +42,10 @@
     [super viewWillAppear:animated];
     [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)]];
 
-    if (!self.alreadyDisplayedDVCustomizer) {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         [self showSettings];
-        self.alreadyDisplayedDVCustomizer = !self.alreadyDisplayedDVCustomizer;
-    }
+    });
 }
 
 - (void)didPressedDoneButton {
