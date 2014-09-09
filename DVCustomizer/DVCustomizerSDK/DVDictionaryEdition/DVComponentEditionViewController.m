@@ -57,7 +57,7 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.keys count];
+    return [self.keys count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,35 +67,48 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [self.keys objectAtIndex:indexPath.row];
+    if (indexPath.row == [self.keys count]) {
+        cell.textLabel.text = @"Add item property";
+    } else {
+        cell.textLabel.text = [self.keys objectAtIndex:indexPath.row];
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *key = [self.keys objectAtIndex:indexPath.row];
-    
-    if ([key isEqualToString:@"itemName"]) {
+    if (indexPath.row == [self.keys count]) {
         DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
-        numberPickerController.originalText = [self.currentComponent objectForKey:key];
-        numberPickerController.key = key;
+        numberPickerController.placeholderText = @"New item property";
+        numberPickerController.key = self.componentIdentifier;
         numberPickerController.delegate = self;
         numberPickerController.textFieldType = DVTextFieldTypeText;
         [self.navigationController pushViewController:numberPickerController animated:YES];
-    } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
-        DVColorPickerController *colorPickerController = [DVColorPickerController new];
-        colorPickerController.hexColor = [self.currentComponent objectForKey:key];
-        colorPickerController.key = key;
-        colorPickerController.delegate = self;
-        [self.navigationController pushViewController:colorPickerController animated:YES];
-    } else if ([[key lowercaseString] rangeOfString:@"width"].location != NSNotFound
-               || [[key lowercaseString] rangeOfString:@"radius"].location != NSNotFound) {
-        DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
-        numberPickerController.originalText = [self.currentComponent objectForKey:key];
-        numberPickerController.key = key;
-        numberPickerController.delegate = self;
-        numberPickerController.textFieldType = DVTextFieldTypeFloat;
-        [self.navigationController pushViewController:numberPickerController animated:YES];
+    } else {
+        NSString *key = [self.keys objectAtIndex:indexPath.row];
+        
+        if ([key isEqualToString:@"itemName"]) {
+            DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
+            numberPickerController.originalText = [self.currentComponent objectForKey:key];
+            numberPickerController.key = key;
+            numberPickerController.delegate = self;
+            numberPickerController.textFieldType = DVTextFieldTypeText;
+            [self.navigationController pushViewController:numberPickerController animated:YES];
+        } else if ([[key lowercaseString] rangeOfString:@"color"].location != NSNotFound) {
+            DVColorPickerController *colorPickerController = [DVColorPickerController new];
+            colorPickerController.hexColor = [self.currentComponent objectForKey:key];
+            colorPickerController.key = key;
+            colorPickerController.delegate = self;
+            [self.navigationController pushViewController:colorPickerController animated:YES];
+        } else if ([[key lowercaseString] rangeOfString:@"width"].location != NSNotFound
+                   || [[key lowercaseString] rangeOfString:@"radius"].location != NSNotFound) {
+            DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
+            numberPickerController.originalText = [self.currentComponent objectForKey:key];
+            numberPickerController.key = key;
+            numberPickerController.delegate = self;
+            numberPickerController.textFieldType = DVTextFieldTypeFloat;
+            [self.navigationController pushViewController:numberPickerController animated:YES];
+        }
     }
 }
 
@@ -118,9 +131,17 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 #pragma makr - Numper picker delegate
 
 - (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key {
-    NSMutableDictionary *dict = [self.currentComponent mutableCopy];
-    [dict setObject:string forKey:key];
-    self.currentComponent = dict;
+    if ([key isEqualToString:self.componentIdentifier]) {
+        NSMutableDictionary *dict = [self.currentComponent mutableCopy];
+        [dict setObject:@"" forKey:string];
+        self.currentComponent = dict;
+        self.keys = [self.currentComponent allKeys];
+    } else {
+        NSMutableDictionary *dict = [self.currentComponent mutableCopy];
+        [dict setObject:string forKey:key];
+        self.currentComponent = dict;
+    }
+    [self.tableView reloadData];
 }
 
 @end
