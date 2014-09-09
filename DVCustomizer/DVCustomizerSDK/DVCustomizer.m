@@ -122,6 +122,10 @@ static BOOL presentAtInit;
     self.skin = skin;
 }
 
+- (void)reloadCustomization {
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"customizationDictionaryChangedNotification" object:self]];
+}
+
 #pragma mark Utils
 
 - (void)customizeCALayer:(CALayer *)layer withDictionary:(NSDictionary *)dictionary {
