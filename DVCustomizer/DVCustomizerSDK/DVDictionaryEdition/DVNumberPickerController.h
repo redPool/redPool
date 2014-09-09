@@ -29,6 +29,7 @@ NS_ENUM(NSInteger, DVTextFieldType) {
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic, assign) NSInteger textFieldType;
 @property (nonatomic, strong) NSString *originalText;
+@property (nonatomic, strong) NSString *placeholderText;
 @property (nonatomic, strong) NSString *key;
 
 @end
