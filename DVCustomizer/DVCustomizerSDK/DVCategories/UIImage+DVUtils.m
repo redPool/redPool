@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 RedPool. All rights reserved.
 //
 
+// Header
 #import "UIImage+DVUtils.h"
 
 @implementation UIImage (DVUtils)

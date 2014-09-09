@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 RedPool. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+// Native Frameworks
+@import UIKit;
 
 @interface UIImage (DVUtils)
 

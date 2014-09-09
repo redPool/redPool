@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 RedPool. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+// Native Frameworks
+@import Foundation;
 
 @interface NSString (DVUtils)
 
