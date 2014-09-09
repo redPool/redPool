@@ -1,9 +1,9 @@
 //
 //  UIView+DVView.m
-//  RedPool Demo App
+//  Timetracker iOS
 //
 //  Created by José Daniel Vásquez Gómez on 9/6/14.
-//  Copyright (c) 2014 RedPool. All rights reserved.
+//  Copyright (c) 2014 Log(n). All rights reserved.
 //
 
 // Header
@@ -61,10 +61,23 @@ void dv_layoutSubviews_Imp(id self, SEL _cmd) {
 													  usingBlock:^(NSNotification *note) {
 														  __strong __typeof(weakSelf)strongSelf = weakSelf;
 														  if (strongSelf) {
+															  // Check if the object reponds to `layoutSubviews`
 															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
 																  [strongSelf layoutSubviews];
 															  } else {
-																  [[strongSelf superview] layoutSubviews];
+																  // If self doesn't responds to `layoutSubviews`
+																  // we need to go up until a parent implements it or no more
+																  // to go.
+																  id superview = [strongSelf superview];
+																  while (superview) {
+																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
+																		  [superview layoutSubviews];
+																		  
+																		  break;
+																	  } else {
+																		  superview = [superview superview];
+																	  }
+																  }
 															  }
 														  }
 													  }];
