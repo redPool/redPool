@@ -6,12 +6,11 @@
 //  Copyright (c) 2014 Log(n). All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+// Native Frameworks
+@import UIKit;
 
 @interface UIView (DVView)
 
 @property (nonatomic, copy) NSString *dvCustomType;
-
-void dv_layoutSubviews_Imp(id self, SEL _cmd);
 
 @end

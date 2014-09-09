@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Log(n). All rights reserved.
 //
 
+// Header
 #import "NSString+DVUtils.h"
 
 #define INTERFACE_IS_IPHONE                         UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone

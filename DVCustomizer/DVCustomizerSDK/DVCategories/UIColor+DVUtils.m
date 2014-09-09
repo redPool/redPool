@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 Log(n). All rights reserved.
 //
 
+// Header
 #import "UIColor+DVUtils.h"
-#import "NSString+DVUtils.h"
 
+// Categories
+#import "NSString+DVUtils.h"
 
 @implementation UIColor (DVUtils)
 

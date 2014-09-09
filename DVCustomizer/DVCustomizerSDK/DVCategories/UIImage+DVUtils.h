@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Log(n). All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+// Native Frameworks
+@import UIKit;
 
 @interface UIImage (DVUtils)
 
