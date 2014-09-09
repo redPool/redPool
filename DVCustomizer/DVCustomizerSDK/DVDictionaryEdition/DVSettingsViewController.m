@@ -8,6 +8,7 @@
 
 #import "DVSettingsViewController.h"
 #import "DVComponentEditionViewController.h"
+#import "DVNumberPickerController.h"
 #import "DVCustomizer.h"
 
 
@@ -15,7 +16,7 @@ static DVSettingsViewController *shared;
 static BOOL shouldShowAtInit;
 static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
 
-@interface DVSettingsViewController () <UITableViewDataSource, UITableViewDelegate, DVComponentEditionViewControllerDelegate>
+@interface DVSettingsViewController () <UITableViewDataSource, UITableViewDelegate, DVComponentEditionViewControllerDelegate, DVNumberPickerController>
 
 @property (nonatomic, strong) NSDictionary *dictionary;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -78,36 +79,48 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.dictionary objectForKey:[self.keys objectAtIndex:section]] count];
+    return [[self.dictionary objectForKey:[self.keys objectAtIndex:section]] count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *item = [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [item objectForKey:@"itemName"];
+    if (indexPath.row == [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) count]) {
+        cell.textLabel.text = [NSString stringWithFormat:@"Add %@ Component", [self.keys objectAtIndex:indexPath.section]];
+    } else {
+        NSDictionary *item = [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
+        cell.textLabel.text = [item objectForKey:@"itemName"];
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *itemDict = [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
-    self.currentComponent = itemDict;
-    DVComponentEditionViewController *componentEditionController = [[DVComponentEditionViewController alloc]init];
-    componentEditionController.currentComponent = self.currentComponent;
-    componentEditionController.componentIdentifier = [NSString stringWithFormat:@"%@:%d", [self tableView:tableView titleForHeaderInSection:indexPath.section], indexPath.row];
-    componentEditionController.delegate = self;
-    [self.navigationController pushViewController:componentEditionController animated:YES];
+    if (indexPath.row == [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) count]) {
+        DVNumberPickerController *numberPickerController = [DVNumberPickerController new];
+        numberPickerController.placeholderText = @"Component item name";
+        numberPickerController.key = [self.keys objectAtIndex:indexPath.section];
+        numberPickerController.delegate = self;
+        numberPickerController.textFieldType = DVTextFieldTypeText;
+        [self.navigationController pushViewController:numberPickerController animated:YES];
+    } else {
+        NSDictionary *itemDict = [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
+        self.currentComponent = itemDict;
+        DVComponentEditionViewController *componentEditionController = [[DVComponentEditionViewController alloc]init];
+        componentEditionController.currentComponent = self.currentComponent;
+        componentEditionController.componentIdentifier = [NSString stringWithFormat:@"%@:%d", [self tableView:tableView titleForHeaderInSection:indexPath.section], indexPath.row];
+        componentEditionController.delegate = self;
+        [self.navigationController pushViewController:componentEditionController animated:YES];
+    }
 }
 
 - (IBAction)didPressedDoneButton:(id)sender {    
     [[DVCustomizer sharedManager]setSkinDictionary:self.dictionary];
-    
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"customizationDictionaryChangedNotification" object:self]];
+    [[DVCustomizer sharedManager] reloadCustomization];
     
     if (self.delegate
         && [self.delegate respondsToSelector:@selector(didPressedDoneButton)]) {
@@ -124,6 +137,19 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
     [tempArray removeObjectAtIndex:[array[1] integerValue]];
     [tempArray insertObject:component atIndex:[array[1] integerValue]];
     [temp setObject:tempArray forKey:array[0]];
+    self.dictionary = temp;
+    [self.tableView reloadData];
+}
+
+#pragma mark - DVNumber pirkcer
+
+- (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key {
+    NSMutableDictionary *temp = [self.dictionary mutableCopy];
+    NSMutableDictionary *dict = [@{@"itemName":string} mutableCopy];
+    NSMutableArray *arrayOfComponents = [[temp objectForKey:key] mutableCopy];
+    [temp removeObjectForKey:key];
+    [arrayOfComponents addObject:dict];
+    [temp setObject:arrayOfComponents forKey:key];
     self.dictionary = temp;
     [self.tableView reloadData];
 }
