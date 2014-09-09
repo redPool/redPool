@@ -21,7 +21,7 @@ void dv_layoutSubviews_Imp(id self, SEL _cmd) {
     
     if ([DVSettingsViewController shouldShowAtInit]) {
     
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"customizationDictionaryChangedNotification"
+        [[NSNotificationCenter defaultCenter] addObserverForName:kCustomizationReloadNotification
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *note) {
