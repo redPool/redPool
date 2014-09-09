@@ -82,6 +82,7 @@ void dv_layoutSubviews_Imp(id self, SEL _cmd) {
 														  }
 													  }];
     }
+    
     [[DVCustomizer sharedManager] customizeComponent:self];
     
     ((void( *)(id, SEL))__original_layoutSubviews_Imp)(self, _cmd);
