@@ -42,7 +42,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)]];
-    [self showSettings];
+
+    if (!self.alreadyDisplayedDVCustomizer) {
+        [self showSettings];
+        self.alreadyDisplayedDVCustomizer = !self.alreadyDisplayedDVCustomizer;
+    }
 }
 
 - (void)didPressedDoneButton {
@@ -97,7 +101,7 @@
 
 - (void)didFinishedEditingValue:(NSString *)string withKey:(NSString *)key {
     self.currentEditedView.dvCustomType = string;
-    [self.currentEditedView setNeedsDisplay];
+    [[DVCustomizer sharedManager] reloadCustomization];
 }
 - (IBAction)didPressedEditDictionaryButton:(id)sender {
     [self showSettings];
