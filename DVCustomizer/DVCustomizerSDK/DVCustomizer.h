@@ -19,5 +19,6 @@
 - (void)customizeComponent:(UIView *)component;
 - (NSDictionary *)getSkin;
 - (void)setSkinDictionary:(NSDictionary *)skin;
+- (void)reloadCustomization;
 
 @end
