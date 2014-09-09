@@ -100,7 +100,7 @@ static BOOL presentAtInit;
 }
 
 - (void)reloadCustomization {
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kCustomizationReloadNotification object:self]];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kDVCustomizationDictionaryChangedNotification object:self]];
 }
 
 #pragma mark Utils
