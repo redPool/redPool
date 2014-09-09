@@ -15,6 +15,6 @@ static NSString *kLayer = @"layer";
 static NSString *kColor = @"color";
 static NSString *kWidth = @"width";
 static NSString *kRadius = @"radius";
-static NSString *kCustomizationReloadNotification = @"customizationDictionaryChangedNotification";
+static NSString *kDVCustomizationDictionaryChangedNotification = @"customizationDictionaryChangedNotification";
 
 #endif
