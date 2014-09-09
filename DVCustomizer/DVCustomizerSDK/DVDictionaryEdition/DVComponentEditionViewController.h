@@ -1,9 +1,9 @@
 //
 //  DVComponentEditionViewController.h
-//  Timetracker iOS
+//  RedPool Demo App
 //
 //  Created by José Daniel Vásquez Gómez on 9/3/14.
-//  Copyright (c) 2014 Log(n). All rights reserved.
+//  Copyright (c) 2014 RedPool. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

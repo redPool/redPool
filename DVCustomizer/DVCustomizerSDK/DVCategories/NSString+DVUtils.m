@@ -1,11 +1,12 @@
 //
 //  NSString+DVUtils.m
-//  Timetracker iOS
+//  RedPool Demo App
 //
 //  Created by José Daniel Vásquez Gómez on 9/2/14.
-//  Copyright (c) 2014 Log(n). All rights reserved.
+//  Copyright (c) 2014 RedPool. All rights reserved.
 //
 
+// Header
 #import "NSString+DVUtils.h"
 
 #define INTERFACE_IS_IPHONE                         UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone

@@ -1,14 +1,16 @@
 //
 //  UIColor+DVUtils.m
-//  Timetracker iOS
+//  RedPool Demo App
 //
 //  Created by José Daniel Vásquez Gómez on 9/2/14.
-//  Copyright (c) 2014 Log(n). All rights reserved.
+//  Copyright (c) 2014 RedPool. All rights reserved.
 //
 
+// Header
 #import "UIColor+DVUtils.h"
-#import "NSString+DVUtils.h"
 
+// Categories
+#import "NSString+DVUtils.h"
 
 @implementation UIColor (DVUtils)
 

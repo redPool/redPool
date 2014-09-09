@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11DA888719BE830100BD66A4 /* DVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVConstants.h; sourceTree = "<group>"; };
 		FA23F1AE19BDF77500BB90B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA23F1B019BF2F2300BB90B2 /* DVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVConstants.h; sourceTree = "<group>"; };
 		FA827DDF19BCD3540031CC84 /* DVCustomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVCustomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,10 +200,11 @@
 		FA827E1A19BCD3760031CC84 /* DVCustomizerSDK */ = {
 			isa = PBXGroup;
 			children = (
-				FA827E2419BCD3760031CC84 /* DVCustomizer.h */,
-				FA827E2519BCD3760031CC84 /* DVCustomizer.m */,
 				FA827E1B19BCD3760031CC84 /* DVCategories */,
 				FA827E2619BCD3760031CC84 /* DVDictionaryEdition */,
+				11DA888719BE830100BD66A4 /* DVConstants.h */,
+				FA827E2419BCD3760031CC84 /* DVCustomizer.h */,
+				FA827E2519BCD3760031CC84 /* DVCustomizer.m */,
 			);
 			path = DVCustomizerSDK;
 			sourceTree = "<group>";
