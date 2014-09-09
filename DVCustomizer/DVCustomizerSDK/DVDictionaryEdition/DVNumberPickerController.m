@@ -58,7 +58,13 @@
             break;
     }
     
-    self.textField.text = [NSString stringWithFormat:@"%@", self.originalText];
+    if (self.originalText) {
+        self.textField.text = [NSString stringWithFormat:@"%@", self.originalText];
+    }
+    
+    if (self.placeholderText) {
+        self.textField.placeholder = self.placeholderText;
+    }
     
     UIToolbar *inputAccessoryView = [[UIToolbar alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(inputAccessoryView.frame.size.width - 64.0f, 0.0f, 64.0f, 44.0f)];
