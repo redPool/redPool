@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA23F1AF19BDF77500BB90B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA23F1AE19BDF77500BB90B2 /* Images.xcassets */; };
+		FA827DE319BCD3540031CC84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE219BCD3540031CC84 /* Foundation.framework */; };
+		FA827DE519BCD3540031CC84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE419BCD3540031CC84 /* CoreGraphics.framework */; };
+		FA827DE719BCD3540031CC84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE619BCD3540031CC84 /* UIKit.framework */; };
+		FA827DED19BCD3540031CC84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA827DEB19BCD3540031CC84 /* InfoPlist.strings */; };
+		FA827DEF19BCD3540031CC84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827DEE19BCD3540031CC84 /* main.m */; };
+		FA827DF319BCD3540031CC84 /* RPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827DF219BCD3540031CC84 /* RPAppDelegate.m */; };
+		FA827DF619BCD3540031CC84 /* MainView_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA827DF419BCD3540031CC84 /* MainView_iPhone.storyboard */; };
+		FA827DF919BCD3540031CC84 /* MainView_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA827DF719BCD3540031CC84 /* MainView_iPad.storyboard */; };
+		FA827DFC19BCD3540031CC84 /* RPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827DFB19BCD3540031CC84 /* RPViewController.m */; };
+		FA827E0519BCD3540031CC84 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827E0419BCD3540031CC84 /* XCTest.framework */; };
+		FA827E0619BCD3540031CC84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE219BCD3540031CC84 /* Foundation.framework */; };
+		FA827E0719BCD3540031CC84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA827DE619BCD3540031CC84 /* UIKit.framework */; };
+		FA827E0F19BCD3540031CC84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA827E0D19BCD3540031CC84 /* InfoPlist.strings */; };
+		FA827E1119BCD3540031CC84 /* RPCustomizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E1019BCD3540031CC84 /* RPCustomizerTests.m */; };
+		FA827E2E19BCD3760031CC84 /* NSString+RPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E1D19BCD3760031CC84 /* NSString+RPUtils.m */; };
+		FA827E3019BCD3760031CC84 /* UIImage+RPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E2119BCD3760031CC84 /* UIImage+RPUtils.m */; };
+		FA827E3119BCD3760031CC84 /* UIView+RPView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E2319BCD3760031CC84 /* UIView+RPView.m */; };
+		FA827E3219BCD3760031CC84 /* RPCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E2519BCD3760031CC84 /* RPCustomizer.m */; };
+		FA827E3319BCD3760031CC84 /* RPComponentEditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E2819BCD3760031CC84 /* RPComponentEditionViewController.m */; };
+		FA827E3419BCD3760031CC84 /* RPComponentEditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA827E2919BCD3760031CC84 /* RPComponentEditionViewController.xib */; };
+		FA827E3519BCD3760031CC84 /* RPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA827E2B19BCD3760031CC84 /* RPSettingsViewController.m */; };
+		FA827E3619BCD3760031CC84 /* RPSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA827E2C19BCD3760031CC84 /* RPSettingsViewController.xib */; };
+		FA827E3B19BCE35C0031CC84 /* MySkin.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA827E3A19BCE35C0031CC84 /* MySkin.plist */; };
+		FAC6DCC419BD088500790A7E /* RPColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCC219BD088500790A7E /* RPColorPickerController.m */; };
+		FAC6DCC519BD088500790A7E /* RPColorPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC6DCC319BD088500790A7E /* RPColorPickerController.xib */; };
+		FAC6DCCB19BD254000790A7E /* UIColor+RPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCCA19BD254000790A7E /* UIColor+RPUtils.m */; };
+		FAC6DCCF19BDEFCE00790A7E /* RPNumberPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6DCCD19BDEFCE00790A7E /* RPNumberPickerController.m */; };
+		FAC6DCD019BDEFCE00790A7E /* RPNumberPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC6DCCE19BDEFCE00790A7E /* RPNumberPickerController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA827E0819BCD3540031CC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA827DD719BCD3540031CC84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA827DDE19BCD3540031CC84;
+			remoteInfo = DVCustomizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11DA888719BE830100BD66A4 /* RPConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPConstants.h; sourceTree = "<group>"; };
+		FA23F1AE19BDF77500BB90B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA827DDF19BCD3540031CC84 /* RPCustomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPCustomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA827DE219BCD3540031CC84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA827DE419BCD3540031CC84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA827DE619BCD3540031CC84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA827DEA19BCD3540031CC84 /* RPCustomizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPCustomizer-Info.plist"; sourceTree = "<group>"; };
+		FA827DEC19BCD3540031CC84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA827DEE19BCD3540031CC84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA827DF019BCD3540031CC84 /* RPCustomizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPCustomizer-Prefix.pch"; sourceTree = "<group>"; };
+		FA827DF119BCD3540031CC84 /* RPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPAppDelegate.h; sourceTree = "<group>"; };
+		FA827DF219BCD3540031CC84 /* RPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPAppDelegate.m; sourceTree = "<group>"; };
+		FA827DF519BCD3540031CC84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainView_iPhone.storyboard; sourceTree = "<group>"; };
+		FA827DF819BCD3540031CC84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainView_iPad.storyboard; sourceTree = "<group>"; };
+		FA827DFA19BCD3540031CC84 /* RPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPViewController.h; sourceTree = "<group>"; };
+		FA827DFB19BCD3540031CC84 /* RPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPViewController.m; sourceTree = "<group>"; };
+		FA827E0319BCD3540031CC84 /* RPCustomizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPCustomizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA827E0419BCD3540031CC84 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FA827E0C19BCD3540031CC84 /* RPCustomizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPCustomizerTests-Info.plist"; sourceTree = "<group>"; };
+		FA827E0E19BCD3540031CC84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA827E1019BCD3540031CC84 /* RPCustomizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPCustomizerTests.m; sourceTree = "<group>"; };
+		FA827E1C19BCD3760031CC84 /* NSString+RPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RPUtils.h"; sourceTree = "<group>"; };
+		FA827E1D19BCD3760031CC84 /* NSString+RPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RPUtils.m"; sourceTree = "<group>"; };
+		FA827E2019BCD3760031CC84 /* UIImage+RPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RPUtils.h"; sourceTree = "<group>"; };
+		FA827E2119BCD3760031CC84 /* UIImage+RPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RPUtils.m"; sourceTree = "<group>"; };
+		FA827E2219BCD3760031CC84 /* UIView+RPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RPView.h"; sourceTree = "<group>"; };
+		FA827E2319BCD3760031CC84 /* UIView+RPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RPView.m"; sourceTree = "<group>"; };
+		FA827E2419BCD3760031CC84 /* RPCustomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCustomizer.h; sourceTree = "<group>"; };
+		FA827E2519BCD3760031CC84 /* RPCustomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCustomizer.m; sourceTree = "<group>"; };
+		FA827E2719BCD3760031CC84 /* RPComponentEditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPComponentEditionViewController.h; sourceTree = "<group>"; };
+		FA827E2819BCD3760031CC84 /* RPComponentEditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPComponentEditionViewController.m; sourceTree = "<group>"; };
+		FA827E2919BCD3760031CC84 /* RPComponentEditionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RPComponentEditionViewController.xib; sourceTree = "<group>"; };
+		FA827E2A19BCD3760031CC84 /* RPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPSettingsViewController.h; sourceTree = "<group>"; };
+		FA827E2B19BCD3760031CC84 /* RPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPSettingsViewController.m; sourceTree = "<group>"; };
+		FA827E2C19BCD3760031CC84 /* RPSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RPSettingsViewController.xib; sourceTree = "<group>"; };
+		FA827E3A19BCE35C0031CC84 /* MySkin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySkin.plist; sourceTree = "<group>"; };
+		FAC6DCC119BD088500790A7E /* RPColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPColorPickerController.h; sourceTree = "<group>"; };
+		FAC6DCC219BD088500790A7E /* RPColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPColorPickerController.m; sourceTree = "<group>"; };
+		FAC6DCC319BD088500790A7E /* RPColorPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RPColorPickerController.xib; sourceTree = "<group>"; };
+		FAC6DCC919BD254000790A7E /* UIColor+RPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RPUtils.h"; sourceTree = "<group>"; };
+		FAC6DCCA19BD254000790A7E /* UIColor+RPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RPUtils.m"; sourceTree = "<group>"; };
+		FAC6DCCC19BDEFCE00790A7E /* RPNumberPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPNumberPickerController.h; sourceTree = "<group>"; };
+		FAC6DCCD19BDEFCE00790A7E /* RPNumberPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPNumberPickerController.m; sourceTree = "<group>"; };
+		FAC6DCCE19BDEFCE00790A7E /* RPNumberPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RPNumberPickerController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA827DDC19BCD3540031CC84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA827DE519BCD3540031CC84 /* CoreGraphics.framework in Frameworks */,
+				FA827DE719BCD3540031CC84 /* UIKit.framework in Frameworks */,
+				FA827DE319BCD3540031CC84 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA827E0019BCD3540031CC84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA827E0519BCD3540031CC84 /* XCTest.framework in Frameworks */,
+				FA827E0719BCD3540031CC84 /* UIKit.framework in Frameworks */,
+				FA827E0619BCD3540031CC84 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA827DD619BCD3540031CC84 = {
+			isa = PBXGroup;
+			children = (
+				FA827DE819BCD3540031CC84 /* RPCustomizer */,
+				FA827E0A19BCD3540031CC84 /* RPCustomizerTests */,
+				FA827DE119BCD3540031CC84 /* Frameworks */,
+				FA827DE019BCD3540031CC84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA827DE019BCD3540031CC84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA827DDF19BCD3540031CC84 /* RPCustomizer.app */,
+				FA827E0319BCD3540031CC84 /* RPCustomizerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA827DE119BCD3540031CC84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA827DE219BCD3540031CC84 /* Foundation.framework */,
+				FA827DE419BCD3540031CC84 /* CoreGraphics.framework */,
+				FA827DE619BCD3540031CC84 /* UIKit.framework */,
+				FA827E0419BCD3540031CC84 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA827DE819BCD3540031CC84 /* RPCustomizer */ = {
+			isa = PBXGroup;
+			children = (
+				FA827DF119BCD3540031CC84 /* RPAppDelegate.h */,
+				FA827DF219BCD3540031CC84 /* RPAppDelegate.m */,
+				FA827DF419BCD3540031CC84 /* MainView_iPhone.storyboard */,
+				FA827DF719BCD3540031CC84 /* MainView_iPad.storyboard */,
+				FA827DFA19BCD3540031CC84 /* RPViewController.h */,
+				FA827DFB19BCD3540031CC84 /* RPViewController.m */,
+				FA827E3A19BCE35C0031CC84 /* MySkin.plist */,
+				FA827E1A19BCD3760031CC84 /* RPCustomizerSDK */,
+				FA827DE919BCD3540031CC84 /* Supporting Files */,
+			);
+			path = RPCustomizer;
+			sourceTree = "<group>";
+		};
+		FA827DE919BCD3540031CC84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA23F1AE19BDF77500BB90B2 /* Images.xcassets */,
+				FA827DEA19BCD3540031CC84 /* RPCustomizer-Info.plist */,
+				FA827DEB19BCD3540031CC84 /* InfoPlist.strings */,
+				FA827DEE19BCD3540031CC84 /* main.m */,
+				FA827DF019BCD3540031CC84 /* RPCustomizer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA827E0A19BCD3540031CC84 /* RPCustomizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA827E1019BCD3540031CC84 /* RPCustomizerTests.m */,
+				FA827E0B19BCD3540031CC84 /* Supporting Files */,
+			);
+			path = RPCustomizerTests;
+			sourceTree = "<group>";
+		};
+		FA827E0B19BCD3540031CC84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA827E0C19BCD3540031CC84 /* RPCustomizerTests-Info.plist */,
+				FA827E0D19BCD3540031CC84 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA827E1A19BCD3760031CC84 /* RPCustomizerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				11DA888719BE830100BD66A4 /* RPConstants.h */,
+				FA827E2419BCD3760031CC84 /* RPCustomizer.h */,
+				FA827E2519BCD3760031CC84 /* RPCustomizer.m */,
+				FA827E1B19BCD3760031CC84 /* RPCategories */,
+				FA827E2619BCD3760031CC84 /* RPDictionaryEdition */,
+			);
+			path = RPCustomizerSDK;
+			sourceTree = "<group>";
+		};
+		FA827E1B19BCD3760031CC84 /* RPCategories */ = {
+			isa = PBXGroup;
+			children = (
+				FAC6DCC919BD254000790A7E /* UIColor+RPUtils.h */,
+				FAC6DCCA19BD254000790A7E /* UIColor+RPUtils.m */,
+				FA827E1C19BCD3760031CC84 /* NSString+RPUtils.h */,
+				FA827E1D19BCD3760031CC84 /* NSString+RPUtils.m */,
+				FA827E2019BCD3760031CC84 /* UIImage+RPUtils.h */,
+				FA827E2119BCD3760031CC84 /* UIImage+RPUtils.m */,
+				FA827E2219BCD3760031CC84 /* UIView+RPView.h */,
+				FA827E2319BCD3760031CC84 /* UIView+RPView.m */,
+			);
+			path = RPCategories;
+			sourceTree = "<group>";
+		};
+		FA827E2619BCD3760031CC84 /* RPDictionaryEdition */ = {
+			isa = PBXGroup;
+			children = (
+				FAC6DCD119BDF03600790A7E /* Pickers */,
+				FA827E2719BCD3760031CC84 /* RPComponentEditionViewController.h */,
+				FA827E2819BCD3760031CC84 /* RPComponentEditionViewController.m */,
+				FA827E2919BCD3760031CC84 /* RPComponentEditionViewController.xib */,
+				FA827E2A19BCD3760031CC84 /* RPSettingsViewController.h */,
+				FA827E2B19BCD3760031CC84 /* RPSettingsViewController.m */,
+				FA827E2C19BCD3760031CC84 /* RPSettingsViewController.xib */,
+			);
+			path = RPDictionaryEdition;
+			sourceTree = "<group>";
+		};
+		FAC6DCD119BDF03600790A7E /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				FAC6DCCC19BDEFCE00790A7E /* RPNumberPickerController.h */,
+				FAC6DCCD19BDEFCE00790A7E /* RPNumberPickerController.m */,
+				FAC6DCCE19BDEFCE00790A7E /* RPNumberPickerController.xib */,
+				FAC6DCC119BD088500790A7E /* RPColorPickerController.h */,
+				FAC6DCC219BD088500790A7E /* RPColorPickerController.m */,
+				FAC6DCC319BD088500790A7E /* RPColorPickerController.xib */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA827DDE19BCD3540031CC84 /* RPCustomizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA827E1419BCD3540031CC84 /* Build configuration list for PBXNativeTarget "RPCustomizer" */;
+			buildPhases = (
+				FA827DDB19BCD3540031CC84 /* Sources */,
+				FA827DDC19BCD3540031CC84 /* Frameworks */,
+				FA827DDD19BCD3540031CC84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RPCustomizer;
+			productName = DVCustomizer;
+			productReference = FA827DDF19BCD3540031CC84 /* RPCustomizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA827E0219BCD3540031CC84 /* RPCustomizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA827E1719BCD3540031CC84 /* Build configuration list for PBXNativeTarget "RPCustomizerTests" */;
+			buildPhases = (
+				FA827DFF19BCD3540031CC84 /* Sources */,
+				FA827E0019BCD3540031CC84 /* Frameworks */,
+				FA827E0119BCD3540031CC84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA827E0919BCD3540031CC84 /* PBXTargetDependency */,
+			);
+			name = RPCustomizerTests;
+			productName = DVCustomizerTests;
+			productReference = FA827E0319BCD3540031CC84 /* RPCustomizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA827DD719BCD3540031CC84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = redPool;
+				TargetAttributes = {
+					FA827E0219BCD3540031CC84 = {
+						TestTargetID = FA827DDE19BCD3540031CC84;
+					};
+				};
+			};
+			buildConfigurationList = FA827DDA19BCD3540031CC84 /* Build configuration list for PBXProject "RPCustomizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA827DD619BCD3540031CC84;
+			productRefGroup = FA827DE019BCD3540031CC84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA827DDE19BCD3540031CC84 /* RPCustomizer */,
+				FA827E0219BCD3540031CC84 /* RPCustomizerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA827DDD19BCD3540031CC84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA827DF919BCD3540031CC84 /* MainView_iPad.storyboard in Resources */,
+				FA23F1AF19BDF77500BB90B2 /* Images.xcassets in Resources */,
+				FA827E3619BCD3760031CC84 /* RPSettingsViewController.xib in Resources */,
+				FA827DF619BCD3540031CC84 /* MainView_iPhone.storyboard in Resources */,
+				FA827E3B19BCE35C0031CC84 /* MySkin.plist in Resources */,
+				FAC6DCC519BD088500790A7E /* RPColorPickerController.xib in Resources */,
+				FAC6DCD019BDEFCE00790A7E /* RPNumberPickerController.xib in Resources */,
+				FA827DED19BCD3540031CC84 /* InfoPlist.strings in Resources */,
+				FA827E3419BCD3760031CC84 /* RPComponentEditionViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA827E0119BCD3540031CC84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA827E0F19BCD3540031CC84 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA827DDB19BCD3540031CC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA827E3219BCD3760031CC84 /* RPCustomizer.m in Sources */,
+				FA827DF319BCD3540031CC84 /* RPAppDelegate.m in Sources */,
+				FAC6DCCB19BD254000790A7E /* UIColor+RPUtils.m in Sources */,
+				FA827E3319BCD3760031CC84 /* RPComponentEditionViewController.m in Sources */,
+				FA827E3019BCD3760031CC84 /* UIImage+RPUtils.m in Sources */,
+				FAC6DCC419BD088500790A7E /* RPColorPickerController.m in Sources */,
+				FAC6DCCF19BDEFCE00790A7E /* RPNumberPickerController.m in Sources */,
+				FA827DFC19BCD3540031CC84 /* RPViewController.m in Sources */,
+				FA827DEF19BCD3540031CC84 /* main.m in Sources */,
+				FA827E3119BCD3760031CC84 /* UIView+RPView.m in Sources */,
+				FA827E2E19BCD3760031CC84 /* NSString+RPUtils.m in Sources */,
+				FA827E3519BCD3760031CC84 /* RPSettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA827DFF19BCD3540031CC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA827E1119BCD3540031CC84 /* RPCustomizerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA827E0919BCD3540031CC84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA827DDE19BCD3540031CC84 /* RPCustomizer */;
+			targetProxy = FA827E0819BCD3540031CC84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA827DEB19BCD3540031CC84 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA827DEC19BCD3540031CC84 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA827DF419BCD3540031CC84 /* MainView_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA827DF519BCD3540031CC84 /* Base */,
+			);
+			name = MainView_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		FA827DF719BCD3540031CC84 /* MainView_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA827DF819BCD3540031CC84 /* Base */,
+			);
+			name = MainView_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		FA827E0D19BCD3540031CC84 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA827E0E19BCD3540031CC84 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA827E1219BCD3540031CC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA827E1319BCD3540031CC84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA827E1519BCD3540031CC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPCustomizer/RPCustomizer-Prefix.pch";
+				INFOPLIST_FILE = "RPCustomizer/RPCustomizer-Info.plist";
+				PRODUCT_NAME = RPCustomizer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA827E1619BCD3540031CC84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPCustomizer/RPCustomizer-Prefix.pch";
+				INFOPLIST_FILE = "RPCustomizer/RPCustomizer-Info.plist";
+				PRODUCT_NAME = RPCustomizer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FA827E1819BCD3540031CC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RPCustomizer.app/RPCustomizer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPCustomizer/RPCustomizer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RPCustomizerTests/RPCustomizerTests-Info.plist";
+				PRODUCT_NAME = RPCustomizerTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FA827E1919BCD3540031CC84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RPCustomizer.app/RPCustomizer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPCustomizer/RPCustomizer-Prefix.pch";
+				INFOPLIST_FILE = "RPCustomizerTests/RPCustomizerTests-Info.plist";
+				PRODUCT_NAME = RPCustomizerTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA827DDA19BCD3540031CC84 /* Build configuration list for PBXProject "RPCustomizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA827E1219BCD3540031CC84 /* Debug */,
+				FA827E1319BCD3540031CC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA827E1419BCD3540031CC84 /* Build configuration list for PBXNativeTarget "RPCustomizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA827E1519BCD3540031CC84 /* Debug */,
+				FA827E1619BCD3540031CC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA827E1719BCD3540031CC84 /* Build configuration list for PBXNativeTarget "RPCustomizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA827E1819BCD3540031CC84 /* Debug */,
+				FA827E1919BCD3540031CC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA827DD719BCD3540031CC84 /* Project object */;
+}
