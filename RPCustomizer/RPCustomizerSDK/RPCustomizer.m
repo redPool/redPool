@@ -58,9 +58,19 @@ static BOOL presentAtInit;
 - (void)customizeComponent:(UIView *)component {
     NSDictionary *dict = [NSDictionary new];
     
-    if (component.rpCustomType) {
-        NSLog(@"Object RPCustomType: %@", component.rpCustomType);
+    if ([NSStringFromClass([component class]) rangeOfString:@"UIButton"].location != NSNotFound
+        || [NSStringFromClass([component class]) rangeOfString:@"UINavigationBar"].location != NSNotFound) {
+        component = component.superview;
+    }
+    
+    if (component.rpCustomType && !component.rpAlreadyCustomized) {
+        [self addObserverToComponent:component];
+        
         dict = [[self.skin objectForKey:NSStringFromClass([component class])] objectAtIndex:[component.rpCustomType integerValue]];
+        
+        if ([component isKindOfClass:[UIButton class]]) {
+            return;
+        }
         
         if ([component isKindOfClass:[UIImageView class]]) {
             if ([dict objectForKey:kImageColor]) {
@@ -69,6 +79,13 @@ static BOOL presentAtInit;
         }
         
         [self customizeComponent:component withDict:dict];
+        component.rpAlreadyCustomized = YES;
+        
+        if (component.subviews && [component.subviews count] > 0 ) {
+            for (UIView *view in component.subviews) {
+                [self customizeComponent:view];
+            }
+        }
     }
 }
 
@@ -103,9 +120,40 @@ static BOOL presentAtInit;
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kRPCustomizationDictionaryChangedNotification object:self]];
 }
 
-#pragma mark Utils
-
-- (void)customizeCALayer:(CALayer *)layer withDictionary:(NSDictionary *)dictionary {
+- (void)addObserverToComponent:(UIView *)component {
+    if ([RPSettingsViewController shouldShowAtInit]) {
+        // We need to get a hold of the notification observer to avoid leaking memory.
+        __weak typeof(component)weakSelf = component;
+        [[NSNotificationCenter defaultCenter] addObserverForName:kRPCustomizationDictionaryChangedNotification
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:^(NSNotification *note) {
+                                                          __strong __typeof(weakSelf)strongSelf = weakSelf;
+                                                          if (strongSelf) {
+                                                              [((UIView *)strongSelf) setNeedsDisplay];
+                                                              ((UIView *)strongSelf).rpAlreadyCustomized = NO;
+                                                              //
+                                                              //                                                            //Check if the object reponds to `layoutSubviews`
+                                                              //															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
+                                                              //																  [strongSelf layoutSubviews];
+                                                              //															  } else {
+                                                              //																  // If self doesn't responds to `layoutSubviews`
+                                                              //																  // we need to go up until a parent implements it or no more
+                                                              //																  // to go.
+                                                              //																  id superview = [strongSelf superview];
+                                                              //																  while (superview) {
+                                                              //																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
+                                                              //																		  [superview layoutSubviews];
+                                                              //																		  
+                                                              //																		  break;
+                                                              //																	  } else {
+                                                              //																		  superview = [superview superview];
+                                                              //																	  }
+                                                              //																  }
+                                                              //															  }
+                                                          }
+                                                      }];
+    }
 
 }
 
