@@ -68,10 +68,6 @@ static BOOL presentAtInit;
         
         dict = [[self.skin objectForKey:NSStringFromClass([component class])] objectAtIndex:[component.rpCustomType integerValue]];
         
-        if ([component isKindOfClass:[UIButton class]]) {
-            return;
-        }
-        
         if ([component isKindOfClass:[UIImageView class]]) {
             if ([dict objectForKey:kImageColor]) {
                 [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[UIColor colorFromHexString:[dict objectForKey:kImageColor]]]];
@@ -94,7 +90,10 @@ static BOOL presentAtInit;
         if (![key isEqualToString:kItemName]
             && ![key isEqualToString:kImageColor]) {
             
-            if ([[dict objectForKey:key] isKindOfClass:[NSString class]]
+            if ([component isKindOfClass:[UIButton class]]
+                && [[dict objectForKey:key] isKindOfClass:[NSDictionary class]]) {
+                [self customizeControl:(UIControl *)component withDict:dict key:key andState:[self getUIControlStateFromString:key]];
+            } else if ([[dict objectForKey:key] isKindOfClass:[NSString class]]
                 && [[key lowercaseString] rangeOfString:kColor].location != NSNotFound) {
                 if ([key rangeOfString:kLayer].location != NSNotFound) {
                     [component setValue:(id)[UIColor colorFromHexString:[dict objectForKey:key]].CGColor forKeyPath:key];
@@ -103,6 +102,36 @@ static BOOL presentAtInit;
                 }
             } else if ([[dict objectForKey:key] respondsToSelector:@selector(intValue)]) {
                 [component setValue:@([[dict objectForKey:key] floatValue]) forKeyPath:key];
+            }
+        }
+    }
+}
+
+- (void)customizeControl:(UIControl *)control withDict:(NSDictionary *)dict key:(NSString *)key andState:(NSInteger)state {
+
+    NSDictionary *btnDict = [dict objectForKey:key];
+    
+    for (NSString *key in [btnDict allKeys]) {
+        if ([control isKindOfClass:[UIButton class]]) {
+            if ([key isEqualToString:kBackgroundImageColor]) {
+                UIView *colorView = [[UIView alloc] initWithFrame:control.frame];
+                colorView.backgroundColor = [UIColor colorFromHexString:[btnDict objectForKey:kBackgroundImageColor]];
+                
+                if ([dict objectForKey:@"layer.cornerRadius"]) {
+                    [colorView.layer setCornerRadius:[[dict objectForKey:@"layer.cornerRadius"] floatValue]];
+                }
+                
+                UIGraphicsBeginImageContext(colorView.bounds.size);
+                [colorView.layer renderInContext:UIGraphicsGetCurrentContext()];
+                
+                UIImage *colorImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                
+                [((UIButton *)control) setBackgroundImage:colorImage forState:state];
+            } else if ([key isEqualToString:kTextColor]) {
+                [((UIButton *)control) setTitleColor:[UIColor colorFromHexString:[btnDict objectForKey:kTextColor]] forState:state];
+            } else if ([key isEqualToString:kText]) {
+                [((UIButton *)control) setTitle:[btnDict objectForKey:kText] forState:state];
             }
         }
     }
@@ -160,6 +189,22 @@ static BOOL presentAtInit;
                                                       }];
     }
 
+}
+
+- (NSInteger)getUIControlStateFromString:(NSString *)name {
+    NSInteger state = 0;
+    
+    if ([name isEqualToString:@"normal"]) {
+        state = UIControlStateNormal;
+    } else if ([name isEqualToString:@"highlighted"]) {
+        state = UIControlStateHighlighted;
+    } else if ([name isEqualToString:@"selected"]) {
+        state = UIControlStateSelected;
+    } else if ([name isEqualToString:@"disabled"]) {
+        state = UIControlStateDisabled;
+    }
+    
+    return state;
 }
 
 @end
