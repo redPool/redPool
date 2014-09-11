@@ -13,5 +13,6 @@
 
 @property (nonatomic, copy) NSString *rpCustomType;
 @property (nonatomic, readwrite) BOOL rpAlreadyCustomized;
+@property (nonatomic, readwrite) BOOL rpAlreadyAddedObserver;
 
 @end

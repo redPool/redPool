@@ -25,6 +25,7 @@
  */
 static void *kRPCustomType = &kRPCustomType;
 static void *kRPAlreadyCustomized = &kRPAlreadyCustomized;
+static void *kRPAlreadyAddedObserver = &kRPAlreadyAddedObserver;
 
 @interface UIView ()
 
@@ -55,6 +56,16 @@ static IMP __original_layoutSubviews_Imp;
 
 - (BOOL) rpAlreadyCustomized {
     NSNumber *number = objc_getAssociatedObject(self, kRPAlreadyCustomized);
+    return [number boolValue];
+}
+
+- (void)setRpAlreadyAddedObserver:(BOOL)rpAlreadyAddedObserver {
+    NSNumber *number = [NSNumber numberWithBool: rpAlreadyAddedObserver];
+    objc_setAssociatedObject(self, kRPAlreadyAddedObserver, number , OBJC_ASSOCIATION_RETAIN);
+}
+
+- (BOOL) rpAlreadyAddedObserver {
+    NSNumber *number = objc_getAssociatedObject(self, kRPAlreadyAddedObserver);
     return [number boolValue];
 }
 
