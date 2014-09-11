@@ -31,7 +31,7 @@
     [super viewDidLoad];
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithTitle:@"Edit Component Type" style:UIBarButtonItemStyleDone target:self action:@selector(didPressedEditComponentTypeButton)];
     self.navigationItem.rightBarButtonItem = editButton;
-    self.gesturesArray = [NSMutableArray new];
+    self.gesturesArray = [NSMutableArray new];    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +65,6 @@
     settings.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didPressedDoneButton)];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settings];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
-
 }
 
 - (void)didPressedEditComponentTypeButton {
