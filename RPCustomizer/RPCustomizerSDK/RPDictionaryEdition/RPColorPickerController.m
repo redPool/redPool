@@ -51,8 +51,8 @@
 }
 
 - (void)configureColorInitialization {
-    self.hexColorPad = [self.hexColor getStringForPad];
-    self.hexColorPhone = [self.hexColor getStringForPhone];
+    self.hexColorPad = [self.hexColor getSecondString];
+    self.hexColorPhone = [self.hexColor getMainString];
     self.currentColor = [UIColor colorFromHexString:self.hexColorPhone];
 }
 
