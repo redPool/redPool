@@ -12,6 +12,7 @@
 @interface RPViewController () <RPSettingsViewControllerDelegate, RPNumberPickerController>
 
 @property (weak, nonatomic) IBOutlet UIButton *editDictionaryButton;
+@property (weak, nonatomic) IBOutlet UIButton *rpButton;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIView *containerView;
@@ -31,7 +32,8 @@
     [super viewDidLoad];
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithTitle:@"Edit Component Type" style:UIBarButtonItemStyleDone target:self action:@selector(didPressedEditComponentTypeButton)];
     self.navigationItem.rightBarButtonItem = editButton;
-    self.gesturesArray = [NSMutableArray new];    
+    self.gesturesArray = [NSMutableArray new];
+    [self.rpButton addTarget:self action:@selector(didPressedRPButton) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,6 +105,12 @@
 }
 - (IBAction)didPressedEditDictionaryButton:(id)sender {
     [self showSettings];
+}
+
+- (void)didPressedRPButton {
+    if (!self.isEditingComponentsTypes) {
+        [self.rpButton setSelected:!self.rpButton.selected];
+    }
 }
 
 @end
