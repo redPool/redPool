@@ -24,7 +24,7 @@
     return result;
 }
 
-- (NSString *)getStringForPhone {
+- (NSString *)getMainString {
     NSString *result = self;
     NSArray *components = [self componentsSeparatedByString:@":"];
     
@@ -37,7 +37,7 @@
     return result;
 }
 
-- (NSString *)getStringForPad {
+- (NSString *)getSecondString {
     NSString *result = self;
     NSArray *components = [self componentsSeparatedByString:@":"];
     

@@ -12,7 +12,7 @@
 @interface NSString (RPUtils)
 
 - (NSString *)getProperStringBasedOnDevice;
-- (NSString *)getStringForPhone;
-- (NSString *)getStringForPad;
+- (NSString *)getMainString;
+- (NSString *)getSecondString;
 
 @end
