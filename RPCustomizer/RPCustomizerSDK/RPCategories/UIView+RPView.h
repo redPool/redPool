@@ -12,5 +12,6 @@
 @interface UIView (RPView)
 
 @property (nonatomic, copy) NSString *rpCustomType;
+@property (nonatomic, readwrite) BOOL rpAlreadyCustomized;
 
 @end

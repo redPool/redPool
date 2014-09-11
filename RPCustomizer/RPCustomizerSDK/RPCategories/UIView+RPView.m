@@ -24,6 +24,7 @@
  *	@since 1.0.0
  */
 static void *kRPCustomType = &kRPCustomType;
+static void *kRPAlreadyCustomized = &kRPAlreadyCustomized;
 
 @interface UIView ()
 
@@ -47,41 +48,19 @@ static IMP __original_layoutSubviews_Imp;
 	return objc_getAssociatedObject(self, kRPCustomType);
 }
 
+- (void)setRpAlreadyCustomized:(BOOL)rpAlreadyCustomized {
+    NSNumber *number = [NSNumber numberWithBool: rpAlreadyCustomized];
+    objc_setAssociatedObject(self, kRPAlreadyCustomized, number , OBJC_ASSOCIATION_RETAIN);
+}
+
+- (BOOL) rpAlreadyCustomized {
+    NSNumber *number = objc_getAssociatedObject(self, kRPAlreadyCustomized);
+    return [number boolValue];
+}
 
 #pragma mark - Swizzling
 
 void dv_layoutSubviews_Imp(id self, SEL _cmd) {
-    __weak typeof(self)weakSelf = self;
-    
-    if ([RPSettingsViewController shouldShowAtInit]) {
-		// We need to get a hold of the notification observer to avoid leaking memory.
-        [[NSNotificationCenter defaultCenter] addObserverForName:kRPCustomizationDictionaryChangedNotification
-														  object:nil
-														   queue:[NSOperationQueue mainQueue]
-													  usingBlock:^(NSNotification *note) {
-														  __strong __typeof(weakSelf)strongSelf = weakSelf;
-														  if (strongSelf) {
-															  // Check if the object reponds to `layoutSubviews`
-															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
-																  [strongSelf layoutSubviews];
-															  } else {
-																  // If self doesn't responds to `layoutSubviews`
-																  // we need to go up until a parent implements it or no more
-																  // to go.
-																  id superview = [strongSelf superview];
-																  while (superview) {
-																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
-																		  [superview layoutSubviews];
-																		  
-																		  break;
-																	  } else {
-																		  superview = [superview superview];
-																	  }
-																  }
-															  }
-														  }
-													  }];
-    }
     [[RPCustomizer sharedManager] customizeComponent:self];
     
     ((void( *)(id, SEL))__original_layoutSubviews_Imp)(self, _cmd);
