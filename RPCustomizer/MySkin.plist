@@ -88,7 +88,45 @@
 			<key>backgroundColor</key>
 			<string>#14C81A:#3DC3CC</string>
 			<key>tintColor</key>
-			<string>#E87CB9:#E87CB9</string>
+			<string>#14C81A:#3DC3CC</string>
+			<key>layer.cornerRadius</key>
+			<string>2</string>
+			<key>normal</key>
+			<dict>
+				<key>backgroundImageColor</key>
+				<string>#14C81A:#3DC3CC</string>
+				<key>textColor</key>
+				<string>#E87CB9:#E87CB9</string>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>highlighted</key>
+			<dict>
+				<key>backgroundImageColor</key>
+				<string>#14C81A:#3DC3CC</string>
+				<key>textColor</key>
+				<string>#E87CB9:#E87CB9</string>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>selected</key>
+			<dict>
+				<key>backgroundImageColor</key>
+				<string>#14C81A:#3DC3CC</string>
+				<key>textColor</key>
+				<string>#E87CB9:#E87CB9</string>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>disabled</key>
+			<dict>
+				<key>backgroundImageColor</key>
+				<string>#14C81A:#3DC3CC</string>
+				<key>textColor</key>
+				<string>#E87CB9:#E87CB9</string>
+				<key>text</key>
+				<string></string>
+			</dict>
 		</dict>
 	</array>
 	<key>UILabel</key>
