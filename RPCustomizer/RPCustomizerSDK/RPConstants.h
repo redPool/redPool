@@ -21,5 +21,8 @@ static NSString *kLayer = @"layer";
 static NSString *kColor = @"color";
 static NSString *kWidth = @"width";
 static NSString *kRadius = @"radius";
+static NSString *kText = @"text";
+static NSString *kTextColor = @"textColor";
+static NSString *kBackgroundImageColor = @"backgroundImageColor";
 
 #endif
