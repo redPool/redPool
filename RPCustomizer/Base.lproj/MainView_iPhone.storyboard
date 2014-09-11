@@ -14,6 +14,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="tabBar.rpCustomType" value="0"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="ysY-Pd-ubx" kind="relationship" relationship="viewControllers" id="jeB-K5-to6"/>
                     </connections>
@@ -30,6 +33,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DET-eh-i74">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="navigationBar.rpCustomType" value="0"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="DlV-Pa-sa3"/>
                     </connections>
@@ -171,6 +177,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="rpCustomType" value="2"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="RPCustomizer" id="9mm-mt-iMD"/>
                     <connections>
