@@ -85,47 +85,47 @@
 		<dict>
 			<key>itemName</key>
 			<string>UIButton 1</string>
-			<key>backgroundColor</key>
-			<string>#14C81A:#3DC3CC</string>
-			<key>tintColor</key>
-			<string>#14C81A:#3DC3CC</string>
 			<key>layer.cornerRadius</key>
 			<string>2</string>
+			<key>tintColor</key>
+			<string>#FFFFFF(0.0)</string>
+			<key>contentHorizontalAlignment</key>
+			<string>1</string>
 			<key>normal</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#14C81A:#3DC3CC</string>
+				<string>#763878</string>
 				<key>textColor</key>
-				<string>#E87CB9:#E87CB9</string>
+				<string>#E9C0EB</string>
 				<key>text</key>
-				<string></string>
+				<string>Btn normalText</string>
 			</dict>
 			<key>highlighted</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#14C81A:#3DC3CC</string>
+				<string>#E9C0EB</string>
 				<key>textColor</key>
-				<string>#E87CB9:#E87CB9</string>
+				<string>#763878</string>
 				<key>text</key>
-				<string></string>
+				<string>Btn highlightedText</string>
 			</dict>
 			<key>selected</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#14C81A:#3DC3CC</string>
+				<string>#1A8215</string>
 				<key>textColor</key>
-				<string>#E87CB9:#E87CB9</string>
+				<string>#99C497</string>
 				<key>text</key>
-				<string></string>
+				<string>Btn selectedText</string>
 			</dict>
 			<key>disabled</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#14C81A:#3DC3CC</string>
+				<string>#7F2E87</string>
 				<key>textColor</key>
-				<string>#E87CB9:#E87CB9</string>
+				<string>#B886BD</string>
 				<key>text</key>
-				<string></string>
+				<string>Btn disabledText</string>
 			</dict>
 		</dict>
 	</array>
@@ -159,6 +159,8 @@
 			<string>#FFFFFF</string>
 			<key>barStyle</key>
 			<string>1</string>
+			<key>barTintColor</key>
+			<string>#EBC5D6</string>
 		</dict>
 	</array>
 	<key>UINavigationBar</key>
@@ -194,6 +196,16 @@
 			<string>#763878</string>
 			<key>backgroundColor</key>
 			<string>#E9C0EB</string>
+			<key>layer.cornerRadius</key>
+			<string>4</string>
+		</dict>
+		<dict>
+			<key>itemName</key>
+			<string>UISegmentedControl 1</string>
+			<key>tintColor</key>
+			<string>#C5D7EB</string>
+			<key>backgroundColor</key>
+			<string>#15559E</string>
 			<key>layer.cornerRadius</key>
 			<string>4</string>
 		</dict>
