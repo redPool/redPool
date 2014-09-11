@@ -121,9 +121,12 @@ static BOOL presentAtInit;
 }
 
 - (void)addObserverToComponent:(UIView *)component {
-    if ([RPSettingsViewController shouldShowAtInit]) {
+    if ([RPSettingsViewController shouldShowAtInit] && !component.rpAlreadyAddedObserver) {
+        component.rpAlreadyAddedObserver = YES;
+        
         // We need to get a hold of the notification observer to avoid leaking memory.
         __weak typeof(component)weakSelf = component;
+        
         [[NSNotificationCenter defaultCenter] addObserverForName:kRPCustomizationDictionaryChangedNotification
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
@@ -131,26 +134,28 @@ static BOOL presentAtInit;
                                                           __strong __typeof(weakSelf)strongSelf = weakSelf;
                                                           if (strongSelf) {
                                                               [((UIView *)strongSelf) setNeedsDisplay];
+                                                              [((UIView *)strongSelf).superview setNeedsDisplay];
                                                               ((UIView *)strongSelf).rpAlreadyCustomized = NO;
-                                                              //
-                                                              //                                                            //Check if the object reponds to `layoutSubviews`
-                                                              //															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
-                                                              //																  [strongSelf layoutSubviews];
-                                                              //															  } else {
-                                                              //																  // If self doesn't responds to `layoutSubviews`
-                                                              //																  // we need to go up until a parent implements it or no more
-                                                              //																  // to go.
-                                                              //																  id superview = [strongSelf superview];
-                                                              //																  while (superview) {
-                                                              //																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
-                                                              //																		  [superview layoutSubviews];
-                                                              //																		  
-                                                              //																		  break;
-                                                              //																	  } else {
-                                                              //																		  superview = [superview superview];
-                                                              //																	  }
-                                                              //																  }
-                                                              //															  }
+
+//
+//                                                            //Check if the object reponds to `layoutSubviews`
+//															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
+//																  [strongSelf layoutSubviews];
+//															  } else {
+//																  // If self doesn't responds to `layoutSubviews`
+//																  // we need to go up until a parent implements it or no more
+//																  // to go.
+//																  id superview = [strongSelf superview];
+//																  while (superview) {
+//																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
+//																		  [superview layoutSubviews];
+//																		  
+//																		  break;
+//																	  } else {
+//																		  superview = [superview superview];
+//																	  }
+//																  }
+//															  }
                                                           }
                                                       }];
     }
