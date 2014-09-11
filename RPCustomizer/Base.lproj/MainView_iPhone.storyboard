@@ -66,8 +66,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="rpCustomType" value="0"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBF-Tl-6ix">
-                                <rect key="frame" x="191" y="87" width="109" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBF-Tl-6ix">
+                                <rect key="frame" x="143" y="87" width="157" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UIButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -185,6 +185,7 @@
                     <connections>
                         <outlet property="containerView" destination="kh9-bI-dsS" id="vqd-mM-0BT"/>
                         <outlet property="editDictionaryButton" destination="cvQ-Pb-OWU" id="jeb-sy-hkl"/>
+                        <outlet property="rpButton" destination="eBF-Tl-6ix" id="aNZ-Zg-SYG"/>
                         <outlet property="textField" destination="4TA-Fe-zlK" id="Rdt-ZL-m7T"/>
                         <outlet property="textView" destination="jqH-d0-kJi" id="pe1-jG-qVj"/>
                         <outletCollection property="componentsArray" destination="jqH-d0-kJi" id="erH-X7-Guz"/>
