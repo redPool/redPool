@@ -9,6 +9,7 @@
 #import "RPComponentEditionViewController.h"
 #import "RPColorPickerController.h"
 #import "RPNumberPickerController.h"
+#import "RPConstants.h"
 
 static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
 

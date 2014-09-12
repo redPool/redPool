@@ -9,6 +9,7 @@
 #import "RPCustomizer.h"
 #import "UIColor+RPUtils.h"
 #import "UIImage+RPUtils.h"
+#import "RPConstants.h"
 
 static RPCustomizer *shared;
 static NSString *skinName;

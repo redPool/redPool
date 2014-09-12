@@ -10,6 +10,7 @@
 #import "RPComponentEditionViewController.h"
 #import "RPNumberPickerController.h"
 #import "RPCustomizer.h"
+#import "RPConstants.h"
 
 
 static RPSettingsViewController *shared;
