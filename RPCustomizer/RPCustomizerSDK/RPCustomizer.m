@@ -195,13 +195,13 @@ static BOOL presentAtInit;
 - (NSInteger)getUIControlStateFromString:(NSString *)name {
     NSInteger state = 0;
     
-    if ([name isEqualToString:@"normal"]) {
+    if ([[name lowercaseString] isEqualToString:kNormalControlState]) {
         state = UIControlStateNormal;
-    } else if ([name isEqualToString:@"highlighted"]) {
+    } else if ([[name lowercaseString] isEqualToString:kHighlightedControlState]) {
         state = UIControlStateHighlighted;
-    } else if ([name isEqualToString:@"selected"]) {
+    } else if ([[name lowercaseString] isEqualToString:kSelectedControlState]) {
         state = UIControlStateSelected;
-    } else if ([name isEqualToString:@"disabled"]) {
+    } else if ([[name lowercaseString] isEqualToString:kDisabledControlState]) {
         state = UIControlStateDisabled;
     }
     

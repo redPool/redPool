@@ -24,5 +24,9 @@ static NSString *kRadius = @"radius";
 static NSString *kText = @"text";
 static NSString *kTextColor = @"textColor";
 static NSString *kBackgroundImageColor = @"backgroundImageColor";
+static NSString *kNormalControlState = @"normal";
+static NSString *kSelectedControlState = @"selected";
+static NSString *kHighlightedControlState = @"highlighted";
+static NSString *kDisabledControlState = @"disabled";
 
 #endif
