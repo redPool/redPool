@@ -12,7 +12,8 @@
 @interface NSString (RPUtils)
 
 - (NSString *)getProperStringBasedOnDevice;
-- (NSString *)getMainString;
-- (NSString *)getSecondString;
+
+@property (nonatomic, strong) NSString *first;
+@property (nonatomic, strong) NSString *second;
 
 @end

@@ -24,7 +24,7 @@
     return result;
 }
 
-- (NSString *)getMainString {
+- (NSString *)first {
     NSString *result = self;
     NSArray *components = [self componentsSeparatedByString:@":"];
     
@@ -37,7 +37,7 @@
     return result;
 }
 
-- (NSString *)getSecondString {
+- (NSString *)second {
     NSString *result = self;
     NSArray *components = [self componentsSeparatedByString:@":"];
     
