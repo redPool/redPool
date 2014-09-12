@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = 'RPCustomizer'
+  s.name         = 'RedPool'
   s.version      = '0.0.1'
   s.summary      = 'Customization framework for UI components.'
   s.description  = 'RPCustomizer allows you to easily configure a component appearance from a .plist file and InterfaceBuilder.'
