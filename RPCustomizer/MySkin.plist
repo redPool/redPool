@@ -8,11 +8,11 @@
 			<key>itemName</key>
 			<string>UIView 1</string>
 			<key>backgroundColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>layer.borderWidth</key>
 			<string>3</string>
 			<key>layer.borderColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
 			<string>4</string>
 		</dict>
@@ -20,13 +20,13 @@
 			<key>itemName</key>
 			<string>UIView 2</string>
 			<key>backgroundColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 		</dict>
 		<dict>
 			<key>itemName</key>
 			<string>UIView 2</string>
 			<key>backgroundColor</key>
-			<string>#F2F2F2</string>
+			<string>!!whiteColor</string>
 		</dict>
 	</array>
 	<key>UITextField</key>
@@ -35,15 +35,15 @@
 			<key>itemName</key>
 			<string>UITextfield 1</string>
 			<key>backgroundColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>textColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
 			<string>3</string>
 			<key>layer.borderWidth</key>
 			<string>3</string>
 			<key>layer.borderColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 		</dict>
 	</array>
 	<key>UITextView</key>
@@ -52,15 +52,15 @@
 			<key>itemName</key>
 			<string>UITextView 1</string>
 			<key>backgroundColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>textColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
 			<string>3</string>
 			<key>layer.borderWidth</key>
 			<string>3</string>
 			<key>layer.borderColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 		</dict>
 	</array>
 	<key>UIImageView</key>
@@ -69,15 +69,15 @@
 			<key>itemName</key>
 			<string>UIImageView 1</string>
 			<key>imageColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 			<key>backgroundColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>layer.cornerRadius</key>
 			<integer>35</integer>
 			<key>layer.borderWidth</key>
 			<integer>5</integer>
 			<key>layer.borderColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 		</dict>
 	</array>
 	<key>UIButton</key>
@@ -88,42 +88,47 @@
 			<key>layer.cornerRadius</key>
 			<string>2</string>
 			<key>tintColor</key>
-			<string>#FFFFFF(0.0)</string>
+			<string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;string&gt;#FFFFFF(0.0)&lt;/string&gt;
+&lt;/plist&gt;
+!!thirdColor</string>
 			<key>contentHorizontalAlignment</key>
 			<string>1</string>
 			<key>normal</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#763878</string>
+				<string>!!secondColor</string>
 				<key>textColor</key>
-				<string>#E9C0EB</string>
+				<string>!!firstColor</string>
 				<key>text</key>
 				<string>Btn normalText</string>
 			</dict>
 			<key>highlighted</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#E9C0EB</string>
+				<string>!!firstColor</string>
 				<key>textColor</key>
-				<string>#763878</string>
+				<string>!!secondColor</string>
 				<key>text</key>
 				<string>Btn highlightedText</string>
 			</dict>
 			<key>selected</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#1A8215</string>
+				<string>!!secondColor</string>
 				<key>textColor</key>
-				<string>#99C497</string>
+				<string>!!secondColor</string>
 				<key>text</key>
 				<string>Btn selectedText</string>
 			</dict>
 			<key>disabled</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>#7F2E87</string>
+				<string>!!firstColor</string>
 				<key>textColor</key>
-				<string>#B886BD</string>
+				<string>!!thirdColor</string>
 				<key>text</key>
 				<string>Btn disabledText</string>
 			</dict>
@@ -135,15 +140,15 @@
 			<key>itemName</key>
 			<string>UILabel 1</string>
 			<key>textColor</key>
-			<string>#763878</string>
+			<string>!!firstColor</string>
 			<key>textAlignment</key>
 			<string>1</string>
 			<key>layer.backgroundColor</key>
-			<string>#E9C0EB</string>
+			<string>!!secondColor</string>
 			<key>layer.borderWidth</key>
 			<string>1</string>
 			<key>layer.borderColor</key>
-			<string>#763878</string>
+			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
 			<string>3</string>
 		</dict>
@@ -154,13 +159,13 @@
 			<key>itemName</key>
 			<string>UITabBar 1</string>
 			<key>backgroundColor</key>
-			<string>#EBC5D6</string>
+			<string>!!firstColor</string>
 			<key>tintColor</key>
-			<string>#FFFFFF</string>
+			<string>!!whiteColor</string>
 			<key>barStyle</key>
 			<string>1</string>
 			<key>barTintColor</key>
-			<string>#EBC5D6</string>
+			<string>!!firstColor</string>
 		</dict>
 	</array>
 	<key>UINavigationBar</key>
@@ -169,7 +174,7 @@
 			<key>itemName</key>
 			<string>UINavigationBar 1</string>
 			<key>barTintColor</key>
-			<string>#EBC5D6</string>
+			<string>!!firstColor</string>
 			<key>barStyle</key>
 			<string>2</string>
 		</dict>
@@ -180,11 +185,11 @@
 			<key>itemName</key>
 			<string>UISwitch 1</string>
 			<key>onTintColor</key>
-			<string>#B684B8</string>
+			<string>!!firstColor</string>
 			<key>tintColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>thumbTintColor</key>
-			<string>#E9C0EB</string>
+			<string>!!fourthColor</string>
 		</dict>
 	</array>
 	<key>UISegmentedControl</key>
@@ -193,9 +198,9 @@
 			<key>itemName</key>
 			<string>UISegmentedControl 1</string>
 			<key>tintColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>backgroundColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
 			<string>4</string>
 		</dict>
@@ -216,7 +221,7 @@
 			<key>itemName</key>
 			<string>UISlider 1</string>
 			<key>tintColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 		</dict>
 	</array>
 	<key>UIStepper</key>
@@ -225,9 +230,9 @@
 			<key>itemName</key>
 			<string>UIStepper 1</string>
 			<key>tintColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>backgroundColor</key>
-			<string>#E9C0EB</string>
+			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
 			<string>4</string>
 		</dict>
@@ -238,9 +243,51 @@
 			<key>itemName</key>
 			<string>UIProgressBar 1</string>
 			<key>tintColor</key>
-			<string>#763878</string>
+			<string>!!secondColor</string>
 			<key>backgroundColor</key>
+			<string>!!firstColor</string>
+		</dict>
+	</array>
+	<key>UIPageControl</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>UIPageControl 1</string>
+			<key>pageIndicatorTintColor</key>
+			<string>!!secondColor</string>
+			<key>currentPageIndicatorTintColor</key>
+			<string>!!firstColor</string>
+		</dict>
+	</array>
+	<key>RPValues</key>
+	<array>
+		<dict>
+			<key>itemName</key>
+			<string>Skin 1</string>
+			<key>!!firstColor</key>
 			<string>#E9C0EB</string>
+			<key>!!secondColor</key>
+			<string>#763878</string>
+			<key>!!thirdColor</key>
+			<string>#FFFFFF(0.0)</string>
+			<key>!!fourthColor</key>
+			<string>#8F64A3</string>
+			<key>!!whiteColor</key>
+			<string>#FFFFFF</string>
+		</dict>
+		<dict>
+			<key>itemName</key>
+			<string>Skin 2</string>
+			<key>!!firstColor</key>
+			<string>#249BC7</string>
+			<key>!!secondColor</key>
+			<string>#84D7F5</string>
+			<key>!!thirdColor</key>
+			<string>#FFFFFF(0.0)</string>
+			<key>!!fourthColor</key>
+			<string>#649CA3</string>
+			<key>!!whiteColor</key>
+			<string>#F5A284</string>
 		</dict>
 	</array>
 </dict>
