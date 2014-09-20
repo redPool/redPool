@@ -10,10 +10,8 @@
 
 @implementation RPAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
-    [RPCustomizer setSkinName:@"MySkin"];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [RPCustomizer setSkinName:@"MySkin" andRPValuesIndex:1];
     [RPCustomizer presentSettingsAtItinialization:YES];
     
     return YES;
