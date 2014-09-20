@@ -57,6 +57,10 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     return @"";
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.keys count] + 1;
 }
@@ -73,6 +77,8 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier_comoponent";
     } else {
         cell.textLabel.text = [self.keys objectAtIndex:indexPath.row];
     }
+    
+    [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
     
     return cell;
 }

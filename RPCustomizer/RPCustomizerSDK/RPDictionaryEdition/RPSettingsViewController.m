@@ -79,6 +79,10 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
     return [self.keys objectAtIndex:section];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[self.dictionary objectForKey:[self.keys objectAtIndex:section]] count] + 1;
 }
@@ -96,6 +100,8 @@ static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
         NSDictionary *item = [((NSArray *)[self.dictionary objectForKey:[self.keys objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
         cell.textLabel.text = [item objectForKey:kItemName];
     }
+    
+    [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
     
     return cell;
 }
