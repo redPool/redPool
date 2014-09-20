@@ -61,8 +61,7 @@ static BOOL presentAtInit;
 - (void)customizeComponent:(UIView *)component {
     NSDictionary *dict = [NSDictionary new];
     
-    if ([NSStringFromClass([component class]) rangeOfString:@"UIButton"].location != NSNotFound
-        || [NSStringFromClass([component class]) rangeOfString:@"UINavigationBar"].location != NSNotFound) {
+    if ([NSStringFromClass([component class]) rangeOfString:@"UINavigationBar"].location != NSNotFound) {
         component = component.superview;
     }
     
