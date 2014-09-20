@@ -10,11 +10,11 @@
 			<key>backgroundColor</key>
 			<string>!!secondColor</string>
 			<key>layer.borderWidth</key>
-			<string>3</string>
+			<string>!!defaultBorderWidth</string>
 			<key>layer.borderColor</key>
 			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
-			<string>4</string>
+			<string>!!defaultCornerRadius</string>
 		</dict>
 		<dict>
 			<key>itemName</key>
@@ -39,9 +39,9 @@
 			<key>textColor</key>
 			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
-			<string>3</string>
+			<string>!!defaultCornerRadius</string>
 			<key>layer.borderWidth</key>
-			<string>3</string>
+			<string>!!defaultBorderWidth</string>
 			<key>layer.borderColor</key>
 			<string>!!firstColor</string>
 		</dict>
@@ -56,9 +56,9 @@
 			<key>textColor</key>
 			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
-			<string>3</string>
+			<string>!!defaultCornerRadius</string>
 			<key>layer.borderWidth</key>
-			<string>3</string>
+			<string>!!defaultBorderWidth</string>
 			<key>layer.borderColor</key>
 			<string>!!firstColor</string>
 		</dict>
@@ -75,7 +75,7 @@
 			<key>layer.cornerRadius</key>
 			<integer>35</integer>
 			<key>layer.borderWidth</key>
-			<integer>5</integer>
+			<string>!!defaultBorderWidth</string>
 			<key>layer.borderColor</key>
 			<string>!!firstColor</string>
 		</dict>
@@ -86,14 +86,9 @@
 			<key>itemName</key>
 			<string>UIButton 1</string>
 			<key>layer.cornerRadius</key>
-			<string>2</string>
+			<string>!!defaultCornerRadius</string>
 			<key>tintColor</key>
-			<string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
-&lt;string&gt;#FFFFFF(0.0)&lt;/string&gt;
-&lt;/plist&gt;
-!!thirdColor</string>
+			<string>#FFFFFF(0.0)</string>
 			<key>contentHorizontalAlignment</key>
 			<string>1</string>
 			<key>normal</key>
@@ -117,9 +112,9 @@
 			<key>selected</key>
 			<dict>
 				<key>backgroundImageColor</key>
-				<string>!!secondColor</string>
+				<string>#FFFFFF(0.0)</string>
 				<key>textColor</key>
-				<string>!!secondColor</string>
+				<string>!!firstColor</string>
 				<key>text</key>
 				<string>Btn selectedText</string>
 			</dict>
@@ -146,11 +141,11 @@
 			<key>layer.backgroundColor</key>
 			<string>!!secondColor</string>
 			<key>layer.borderWidth</key>
-			<string>1</string>
+			<string>!!defaultBorderWidth</string>
 			<key>layer.borderColor</key>
 			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
-			<string>3</string>
+			<string>!!defaultCornerRadius</string>
 		</dict>
 	</array>
 	<key>UITabBar</key>
@@ -202,7 +197,7 @@
 			<key>backgroundColor</key>
 			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
-			<string>4</string>
+			<string>!!defaultCornerRadius</string>
 		</dict>
 		<dict>
 			<key>itemName</key>
@@ -212,7 +207,7 @@
 			<key>backgroundColor</key>
 			<string>#15559E</string>
 			<key>layer.cornerRadius</key>
-			<string>4</string>
+			<string>!!defaultCornerRadius</string>
 		</dict>
 	</array>
 	<key>UISlider</key>
@@ -234,7 +229,7 @@
 			<key>backgroundColor</key>
 			<string>!!firstColor</string>
 			<key>layer.cornerRadius</key>
-			<string>4</string>
+			<string>!!defaultCornerRadius</string>
 		</dict>
 	</array>
 	<key>UIProgressView</key>
@@ -274,6 +269,10 @@
 			<string>#8F64A3</string>
 			<key>!!whiteColor</key>
 			<string>#FFFFFF</string>
+			<key>!!defaultBorderWidth</key>
+			<integer>2</integer>
+			<key>!!defaultCornerRadius</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>itemName</key>
@@ -288,6 +287,10 @@
 			<string>#649CA3</string>
 			<key>!!whiteColor</key>
 			<string>#F5A284</string>
+			<key>!!defaultBorderWidth</key>
+			<integer>4</integer>
+			<key>!!defaultCornerRadius</key>
+			<integer>9</integer>
 		</dict>
 	</array>
 </dict>
