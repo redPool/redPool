@@ -13,7 +13,7 @@
 
 @interface RPCustomizer : NSObject
 
-+ (void)setSkinName:(NSString *)name;
++ (void)setSkinName:(NSString *)name andRPValuesIndex:(NSInteger)index;
 + (void)presentSettingsAtItinialization:(BOOL)presentAtInitialization;
 + (RPCustomizer *)sharedManager;
 - (void)customizeComponent:(UIView *)component;

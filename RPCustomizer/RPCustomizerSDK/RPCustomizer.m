@@ -13,6 +13,7 @@
 
 static RPCustomizer *shared;
 static NSString *skinName;
+static NSInteger rpValuesIndex;
 static BOOL presentAtInit;
 
 @interface RPCustomizer()
@@ -24,8 +25,9 @@ static BOOL presentAtInit;
 
 @implementation RPCustomizer
 
-+ (void)setSkinName:(NSString *)name {
++ (void)setSkinName:(NSString *)name andRPValuesIndex:(NSInteger)index {
     skinName = name;
+    rpValuesIndex = index;
 }
 
 + (void)presentSettingsAtItinialization:(BOOL)presentAtInitialization {
@@ -71,7 +73,7 @@ static BOOL presentAtInit;
         
         if ([component isKindOfClass:[UIImageView class]]) {
             if ([dict objectForKey:kImageColor]) {
-                [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[UIColor colorFromHexString:[dict objectForKey:kImageColor]]]];
+                [((UIImageView *)component) setImage:[((UIImageView *)component).image imageWithColor:[UIColor colorFromHexString:[self getProperValueWithDict:dict andKey:kImageColor]]]];
             }
         }
         
@@ -91,18 +93,20 @@ static BOOL presentAtInit;
         if (![key isEqualToString:kItemName]
             && ![key isEqualToString:kImageColor]) {
             
+            id value = [self getProperValueWithDict:dict andKey:key];
+            
             if ([component isKindOfClass:[UIButton class]]
-                && [[dict objectForKey:key] isKindOfClass:[NSDictionary class]]) {
+                && [value isKindOfClass:[NSDictionary class]]) {
                 [self customizeControl:(UIControl *)component withDict:dict key:key andState:[self getUIControlStateFromString:key]];
-            } else if ([[dict objectForKey:key] isKindOfClass:[NSString class]]
+            } else if ([value isKindOfClass:[NSString class]]
                 && [[key lowercaseString] rangeOfString:kColor].location != NSNotFound) {
                 if ([key rangeOfString:kLayer].location != NSNotFound) {
-                    [component setValue:(id)[UIColor colorFromHexString:[dict objectForKey:key]].CGColor forKeyPath:key];
+                    [component setValue:(id)[UIColor colorFromHexString:value].CGColor forKeyPath:key];
                 } else {
-                    [component setValue:[UIColor colorFromHexString:[dict objectForKey:key]] forKeyPath:key];
+                    [component setValue:[UIColor colorFromHexString:value] forKeyPath:key];
                 }
-            } else if ([[dict objectForKey:key] respondsToSelector:@selector(intValue)]) {
-                [component setValue:@([[dict objectForKey:key] floatValue]) forKeyPath:key];
+            } else if ([value respondsToSelector:@selector(intValue)]) {
+                [component setValue:@([value floatValue]) forKeyPath:key];
             }
         }
     }
@@ -116,10 +120,10 @@ static BOOL presentAtInit;
         if ([control isKindOfClass:[UIButton class]]) {
             if ([key isEqualToString:kBackgroundImageColor]) {
                 UIView *colorView = [[UIView alloc] initWithFrame:control.frame];
-                colorView.backgroundColor = [UIColor colorFromHexString:[btnDict objectForKey:kBackgroundImageColor]];
+                colorView.backgroundColor = [UIColor colorFromHexString:[self getProperValueWithDict:btnDict andKey:kBackgroundImageColor]];
                 
-                if ([dict objectForKey:@"layer.cornerRadius"]) {
-                    [colorView.layer setCornerRadius:[[dict objectForKey:@"layer.cornerRadius"] floatValue]];
+                if ([dict objectForKey:kLayerDotCornerRadius]) {
+                    [colorView.layer setCornerRadius:[[self getProperValueWithDict:dict andKey:kLayerDotCornerRadius] floatValue]];
                 }
                 
                 UIGraphicsBeginImageContext(colorView.bounds.size);
@@ -130,11 +134,21 @@ static BOOL presentAtInit;
                 
                 [((UIButton *)control) setBackgroundImage:colorImage forState:state];
             } else if ([key isEqualToString:kTextColor]) {
-                [((UIButton *)control) setTitleColor:[UIColor colorFromHexString:[btnDict objectForKey:kTextColor]] forState:state];
+                [((UIButton *)control) setTitleColor:[UIColor colorFromHexString:[self getProperValueWithDict:btnDict andKey:kTextColor]] forState:state];
             } else if ([key isEqualToString:kText]) {
-                [((UIButton *)control) setTitle:[btnDict objectForKey:kText] forState:state];
+                [((UIButton *)control) setTitle:[self getProperValueWithDict:btnDict andKey:kText] forState:state];
             }
         }
+    }
+}
+
+//this method detemines if it must return the dictionary value or the RPValue
+- (id)getProperValueWithDict:(NSDictionary *)dict andKey:(NSString *)key {
+    if ([[dict objectForKey:key] isKindOfClass:[NSString class]]
+        && [[dict objectForKey:key] rangeOfString:kRPValueIdentifier].location != NSNotFound) {
+        return [[[self.skin objectForKey:kRPValuesKey] objectAtIndex:rpValuesIndex] objectForKey:[dict objectForKey:key]];
+    } else {
+        return [dict objectForKey:key];
     }
 }
 
