@@ -28,5 +28,8 @@ static NSString *kNormalControlState = @"normal";
 static NSString *kSelectedControlState = @"selected";
 static NSString *kHighlightedControlState = @"highlighted";
 static NSString *kDisabledControlState = @"disabled";
+static NSString *kRPValueIdentifier = @"!!";
+static NSString *kRPValuesKey = @"RPValues";
+static NSString *kLayerDotCornerRadius = @"layer.cornerRadius";
 
 #endif
