@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 José Daniel Vásquez Gómez. All rights reserved.
 //
 
+#import "RPConstants.h"
 #import "RPViewController.h"
 #import "RPNumberPickerController.h"
 
@@ -23,6 +24,7 @@
 @property (nonatomic, assign) BOOL isEditingComponentsTypes;
 
 @property (nonatomic, strong) UIView *currentEditedView;
+@property (nonatomic, assign) NSInteger selectedSkin;
 
 @end
 
@@ -30,10 +32,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.selectedSkin = 0;
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithTitle:@"Edit Component Type" style:UIBarButtonItemStyleDone target:self action:@selector(didPressedEditComponentTypeButton)];
     self.navigationItem.rightBarButtonItem = editButton;
     self.gesturesArray = [NSMutableArray new];
     [self.rpButton addTarget:self action:@selector(didPressedRPButton) forControlEvents:UIControlEventTouchUpInside];
+    UISwipeGestureRecognizer *rightSwipeGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(didSwipeRight:)];
+    rightSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    UISwipeGestureRecognizer *leftSwipeGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(didSwipeLeft:)];
+    leftSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:rightSwipeGesture];
+    [self.view addGestureRecognizer:leftSwipeGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,6 +119,24 @@
 - (void)didPressedRPButton {
     if (!self.isEditingComponentsTypes) {
         [self.rpButton setSelected:!self.rpButton.selected];
+    }
+}
+
+- (void)didSwipeLeft:(UISwipeGestureRecognizer*)gestureRecognizer {
+    if ([[[RPCustomizer sharedManager] getSkin] objectForKey:kRPValuesKey]
+        && self.selectedSkin - 1 >= 0) {
+        self.selectedSkin--;
+        [[RPCustomizer sharedManager]setSkinIndex:self.selectedSkin];
+        [[RPCustomizer sharedManager] reloadCustomization];
+    }
+}
+
+- (void)didSwipeRight:(UISwipeGestureRecognizer*)gestureRecognizer {
+    if ([[[RPCustomizer sharedManager] getSkin] objectForKey:kRPValuesKey]
+        && self.selectedSkin + 1 <= [[[[RPCustomizer sharedManager]getSkin]objectForKey:kRPValuesKey]count] - 1) {
+        self.selectedSkin++;
+        [[RPCustomizer sharedManager]setSkinIndex:self.selectedSkin];
+        [[RPCustomizer sharedManager] reloadCustomization];
     }
 }
 

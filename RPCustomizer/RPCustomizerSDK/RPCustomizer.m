@@ -62,6 +62,7 @@ static BOOL presentAtInit;
     NSDictionary *dict = [NSDictionary new];
     
     if ([NSStringFromClass([component class]) rangeOfString:@"UINavigationBar"].location != NSNotFound) {
+        [self addObserverToComponent:component];
         component = component.superview;
     }
     
@@ -159,6 +160,10 @@ static BOOL presentAtInit;
     self.skin = skin;
 }
 
+- (void)setSkinIndex:(NSInteger)index {
+    rpValuesIndex = index;
+}
+
 - (void)reloadCustomization {
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kRPCustomizationDictionaryChangedNotification object:self]];
 }
@@ -181,24 +186,24 @@ static BOOL presentAtInit;
                                                               ((UIView *)strongSelf).rpAlreadyCustomized = NO;
 
 //
-//                                                            //Check if the object reponds to `layoutSubviews`
-//															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
-//																  [strongSelf layoutSubviews];
-//															  } else {
-//																  // If self doesn't responds to `layoutSubviews`
-//																  // we need to go up until a parent implements it or no more
-//																  // to go.
-//																  id superview = [strongSelf superview];
-//																  while (superview) {
-//																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
-//																		  [superview layoutSubviews];
-//																		  
-//																		  break;
-//																	  } else {
-//																		  superview = [superview superview];
-//																	  }
-//																  }
-//															  }
+                                                            //Check if the object reponds to `layoutSubviews`
+															  if ([strongSelf respondsToSelector:@selector(layoutSubviews)]) {
+																  [strongSelf layoutSubviews];
+															  } else {
+																  // If self doesn't responds to `layoutSubviews`
+																  // we need to go up until a parent implements it or no more
+																  // to go.
+																  id superview = [strongSelf superview];
+																  while (superview) {
+																	  if ([superview respondsToSelector:@selector(layoutSubviews)]) {
+																		  [superview layoutSubviews];
+																		  
+																		  break;
+																	  } else {
+																		  superview = [superview superview];
+																	  }
+																  }
+															  }
                                                           }
                                                       }];
     }

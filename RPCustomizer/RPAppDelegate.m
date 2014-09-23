@@ -11,7 +11,7 @@
 @implementation RPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [RPCustomizer setSkinName:@"MySkin" andRPValuesIndex:1];
+    [RPCustomizer setSkinName:@"MySkin" andRPValuesIndex:0];
     [RPCustomizer presentSettingsAtItinialization:YES];
     
     return YES;
