@@ -13,6 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [RPCustomizer setSkinName:@"MySkin" andRPValuesIndex:0];
     [RPCustomizer presentSettingsAtItinialization:YES];
+    [RPCustomizer allowSkinChangeInRuntime:YES];
     
     return YES;
 }

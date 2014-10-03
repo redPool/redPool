@@ -15,6 +15,7 @@ static RPCustomizer *shared;
 static NSString *skinName;
 static NSInteger rpValuesIndex;
 static BOOL presentAtInit;
+static BOOL allowInRuntime;
 
 @interface RPCustomizer()
 
@@ -32,6 +33,10 @@ static BOOL presentAtInit;
 
 + (void)presentSettingsAtItinialization:(BOOL)presentAtInitialization {
     presentAtInit = presentAtInitialization;
+}
+
++ (void)allowSkinChangeInRuntime:(BOOL)allowChangeSkinInRuntime {
+    allowInRuntime = allowChangeSkinInRuntime;
 }
 
 + (RPCustomizer *)sharedManager {
@@ -169,7 +174,7 @@ static BOOL presentAtInit;
 }
 
 - (void)addObserverToComponent:(UIView *)component {
-    if ([RPSettingsViewController shouldShowAtInit] && !component.rpAlreadyAddedObserver) {
+    if (allowInRuntime && !component.rpAlreadyAddedObserver) {
         component.rpAlreadyAddedObserver = YES;
         
         // We need to get a hold of the notification observer to avoid leaking memory.

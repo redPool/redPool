@@ -15,6 +15,7 @@
 
 + (void)setSkinName:(NSString *)name andRPValuesIndex:(NSInteger)index;
 + (void)presentSettingsAtItinialization:(BOOL)presentAtInitialization;
++ (void)allowSkinChangeInRuntime:(BOOL)allowChangeSkinInRuntime;
 + (RPCustomizer *)sharedManager;
 - (void)customizeComponent:(UIView *)component;
 - (NSDictionary *)getSkin;
