@@ -15,7 +15,7 @@
 
 static RPSettingsViewController *shared;
 static BOOL shouldShowAtInit;
-static NSString *cellIdentifier = @"dv_customizer_cell_identifier";
+static NSString *cellIdentifier = @"rp_customizer_cell_identifier";
 
 @interface RPSettingsViewController () <UITableViewDataSource, UITableViewDelegate, RPComponentEditionViewControllerDelegate, RPNumberPickerController>
 

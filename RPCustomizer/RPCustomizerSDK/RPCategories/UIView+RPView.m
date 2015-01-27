@@ -29,7 +29,7 @@ static void *kRPAlreadyAddedObserver = &kRPAlreadyAddedObserver;
 
 @interface UIView ()
 
-void dv_layoutSubviews_Imp(id self, SEL _cmd);
+void rp_layoutSubviews_Imp(id self, SEL _cmd);
 
 @property (strong, nonatomic) id notificationObserver;
 
@@ -41,8 +41,8 @@ static IMP __original_layoutSubviews_Imp;
 
 #pragma mark Properties
 
-- (void)setRpCustomType:(NSString *)dvCustomType {
-	objc_setAssociatedObject(self, kRPCustomType, dvCustomType, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setRpCustomType:(NSString *)rpCustomType {
+	objc_setAssociatedObject(self, kRPCustomType, rpCustomType, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString *)rpCustomType {
@@ -71,7 +71,7 @@ static IMP __original_layoutSubviews_Imp;
 
 #pragma mark - Swizzling
 
-void dv_layoutSubviews_Imp(id self, SEL _cmd) {
+void rp_layoutSubviews_Imp(id self, SEL _cmd) {
     [[RPCustomizer sharedManager] customizeComponent:self];
     
     ((void( *)(id, SEL))__original_layoutSubviews_Imp)(self, _cmd);
@@ -81,7 +81,7 @@ void dv_layoutSubviews_Imp(id self, SEL _cmd) {
     static dispatch_once_t swizzleLayoutSubviewsToken;
 	dispatch_once(&swizzleLayoutSubviewsToken, ^{
 		Method m = class_getInstanceMethod([self class], @selector(layoutSubviews));
-        __original_layoutSubviews_Imp = method_setImplementation(m, (IMP)dv_layoutSubviews_Imp);
+        __original_layoutSubviews_Imp = method_setImplementation(m, (IMP)rp_layoutSubviews_Imp);
 	});
 }
 
